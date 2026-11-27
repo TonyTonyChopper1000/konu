@@ -1,0 +1,11 @@
+register,file,records,with_date,first_year,last_year,date_field
+Building permissions,building_permissions.csv,4849,4637,1993,2026,Released on
+Layout permissions,layout_permissions.csv,1943,1680,1980,2023,Draft_layout_issued
+Single-window industrial permissions,single_window.csv,254,254,2008,2015,Released on
+Land-use change (municipal),municipal.csv,322,304,1995,2010,Memo_Go_Issued
+NOCs,nocs.csv,100,100,2004,2013,Year
+Extended-area layouts,extended_area_layouts.csv,298,267,2005,2015,Draft_layout_issued
+Extended-area NOCs,extended_area_nocs.csv,24,24,2008,2014,Released On
+Extended-area building permissions,extended_area_building_permissions.csv,21,13,1993,2023,Released on
+HADA layouts,hada_layouts.csv,19,16,2009,2015,Draft_layout_issued
+HADA building permissions,hada_building_permissions.csv,3,3,2013,2014,Released on

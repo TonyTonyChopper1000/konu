@@ -1,0 +1,619 @@
+<meta name="dash-one-writer">
+<meta name="dash-form" content="dashboard">
+<style>
+.tl{display:flex;flex-direction:column;gap:var(--cds-gap-lg);font-family:var(--font-anthropic-sans);color:var(--color-fg)}
+.tl h1{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);margin:0;text-wrap:balance}
+.tl h2{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0;text-wrap:balance}
+.tl h3{font-size:var(--cds-font-size-body);font-weight:var(--cds-font-weight-medium);margin:0}
+.tl p{margin:0;max-width:72ch;line-height:1.5}
+.tl .muted{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.tl-lede{color:var(--color-fg-muted)}
+.tl-lede b{color:var(--color-fg);font-weight:var(--cds-font-weight-medium);font-variant-numeric:tabular-nums}
+.tl-tabs{display:flex;flex-wrap:wrap;gap:var(--cds-gap-xs);border-bottom:1px solid var(--color-border-line)}
+.tl-tab{appearance:none;background:none;border:0;border-bottom:2px solid transparent;padding:var(--cds-pad-sm) var(--cds-pad-md);font:inherit;color:var(--color-fg-muted);cursor:pointer;margin-bottom:-1px}
+.tl-tab:hover{color:var(--color-fg)}
+.tl-tab[aria-selected="true"]{color:var(--color-fg);border-bottom-color:var(--color-fg);font-weight:var(--cds-font-weight-medium)}
+.tl-tab:focus-visible{outline:2px solid var(--color-fg);outline-offset:2px}
+.tl-sec{display:flex;flex-direction:column;gap:var(--cds-gap-lg)}
+.tl-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--cds-gap-md)}
+.tl-kpi{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);display:flex;flex-direction:column;gap:var(--cds-gap-xs);min-width:0}
+.tl-kpi .v{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);font-variant-numeric:tabular-nums;line-height:1.1}
+.tl-kpi .l{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.tl-grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:var(--cds-gap-lg)}
+.tl-card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);display:flex;flex-direction:column;gap:var(--cds-gap-md);min-width:0}
+.tl-src{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:var(--cds-gap-md)}
+.tl-src .tl-card{gap:var(--cds-gap-sm)}
+.tl-src .n{font-family:var(--font-anthropic-serif);font-size:var(--cds-font-size-heading);font-variant-numeric:tabular-nums}
+.tl-src button{align-self:flex-start;background:none;border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-xs) var(--cds-pad-sm);font:inherit;font-size:var(--cds-font-size-caption);color:var(--color-fg);cursor:pointer}
+.tl-src button:hover{background:var(--color-bg)}
+.tl-chart{position:relative;min-height:220px;width:100%}
+.tl-chart svg{display:block;width:100%;overflow:visible}
+.tl-chart text{fill:var(--cds-text-secondary);font-size:var(--cds-font-size-caption);font-family:var(--font-anthropic-sans)}
+.tl-chart .vlabel{fill:var(--color-fg)}
+.tl-tt{position:absolute;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);box-shadow:var(--cds-shadow-popover);border-radius:var(--cds-radius);padding:var(--cds-pad-xs) var(--cds-pad-sm);font-size:var(--cds-font-size-caption);white-space:nowrap;z-index:5}
+.tl-legend{display:flex;flex-wrap:wrap;gap:var(--cds-gap-md);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.tl-legend span{display:inline-flex;align-items:center;gap:6px}
+.tl-sw{width:10px;height:10px;border-radius:2px;display:inline-block}
+.tl-tw{overflow-x:auto;max-width:100%}
+.tl table{border-collapse:collapse;width:100%;font-size:var(--cds-font-size-caption);font-variant-numeric:tabular-nums}
+.tl th,.tl td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--color-border-line);vertical-align:top}
+.tl th{color:var(--color-fg-muted);font-weight:var(--cds-font-weight-medium);white-space:nowrap}
+.tl td.num,.tl th.num{text-align:right}
+.tl td.wrap{max-width:420px;color:var(--color-fg-muted)}
+.tl-pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:var(--cds-font-size-caption);border:1px solid var(--color-border-line)}
+.tl-pill.ok{color:var(--color-ok);border-color:var(--color-ok)}
+.tl-pill.part{color:var(--color-warn);border-color:var(--color-warn)}
+.tl-pill.no{color:var(--color-bad);border-color:var(--color-bad)}
+.tl-sw-ok{background:var(--color-ok)}
+.tl-sw-no{background:var(--color-bad)}
+.tl-filters{display:flex;flex-wrap:wrap;gap:var(--cds-gap-sm);align-items:center}
+.tl-input{font:inherit;font-size:var(--cds-font-size-caption);padding:6px 10px;border:1px solid var(--color-border-line);border-radius:var(--cds-radius);background-color:var(--color-bg);color:var(--color-fg);min-width:0;flex:1 1 200px;max-width:320px}
+@media print{.tl-tabs{display:none}.tl-sec{break-before:page}}
+</style>
+
+<div class="tl">
+  <header id="top" style="display:flex;flex-direction:column;gap:var(--cds-gap-sm)">
+    <h1 id="title">Telangana Land Data Inventory</h1>
+    <p class="tl-lede" id="lede">Four crawler exports hold <b data-draw="t-files" data-source="totals" data-field="files" data-row="0">—</b> CSV files and <b data-draw="t-records" data-source="totals" data-field="records" data-row="0">—</b> rows. The largest is <b data-draw="t-top-src">—</b>, with <b data-draw="t-top-n">—</b> rows.</p>
+  </header>
+
+  <nav class="tl-tabs" role="tablist" aria-label="Data sources">
+    <button class="tl-tab" role="tab" data-tab="overview" aria-selected="true">Overview</button>
+    <button class="tl-tab" role="tab" data-tab="bhubharati" aria-selected="false">Bhubharati</button>
+    <button class="tl-tab" role="tab" data-tab="hmda" aria-selected="false">HMDA</button>
+    <button class="tl-tab" role="tab" data-tab="tgrac" aria-selected="false">TGRAC GIS</button>
+    <button class="tl-tab" role="tab" data-tab="sites" aria-selected="false">Govt websites</button>
+    <button class="tl-tab" role="tab" data-tab="files" aria-selected="false">All files</button>
+    <button class="tl-tab" role="tab" data-tab="checklist" aria-selected="false">Coverage checklist</button>
+  </nav>
+
+  <!-- OVERVIEW -->
+  <section class="tl-sec" id="overview" role="tabpanel">
+    <div class="tl-src">
+      <div class="tl-card" id="ov-bhu">
+        <h3>Bhubharati</h3>
+        <div class="n" data-draw="src-n" data-source="by_source" data-field="records" data-where="source=Bhubharati">—</div>
+        <p class="muted">Land-record master lists: districts, mandals, villages, survey numbers and Sub-Registrar offices.</p>
+        <button type="button" data-goto="bhubharati">Open Bhubharati</button>
+      </div>
+      <div class="tl-card" id="ov-hmda">
+        <h3>HMDA</h3>
+        <div class="n" data-draw="src-n" data-source="by_source" data-field="records" data-where="source=HMDA">—</div>
+        <p class="muted">Approval registers (building, layout, NOC, land-use change) plus the HMDA website's pages, documents and tables.</p>
+        <button type="button" data-goto="hmda">Open HMDA</button>
+      </div>
+      <div class="tl-card" id="ov-tgrac">
+        <h3>TGRAC GIS</h3>
+        <div class="n" data-draw="src-n" data-source="by_source" data-field="records" data-where="source=TGRAC GIS">—</div>
+        <p class="muted">A catalogue of the state ArcGIS server's layers, and attribute tables for 7 of its folders.</p>
+        <button type="button" data-goto="tgrac">Open TGRAC GIS</button>
+      </div>
+      <div class="tl-card" id="ov-sites">
+        <h3>Govt websites</h3>
+        <div class="n" data-draw="src-n" data-source="by_source" data-field="records" data-where="source=Govt websites">—</div>
+        <p class="muted">Page text, document links and tables from RERA, GHMC, CGWB, TGRAC, TG-bPASS and MeeSeva.</p>
+        <button type="button" data-goto="sites">Open Govt websites</button>
+      </div>
+    </div>
+    <p class="muted">Numbers on these cards are rows across all CSV files of that export.</p>
+
+    <div class="tl-grid2">
+      <div class="tl-card" id="ov-rows">
+        <h2>Rows by export</h2>
+        <div class="tl-chart dash-skeleton" data-draw="ov-rows-chart" data-source="by_source"></div>
+      </div>
+      <div class="tl-card" id="ov-files">
+        <h2>Files by export</h2>
+        <div class="tl-chart dash-skeleton" data-draw="ov-files-chart" data-source="by_source"></div>
+      </div>
+    </div>
+
+    <div class="tl-card" id="ov-largest">
+      <h2>Largest files</h2>
+      <p class="muted">The ten files with the most rows, across all four exports.</p>
+      <div class="tl-tw">
+        <table data-source="inventory" data-row-key="path">
+          <thead><tr><th data-field="source">Export</th><th data-field="file">File</th><th data-field="section">Section</th><th class="num" data-field="records">Rows</th><th class="num" data-field="columns">Columns</th></tr></thead>
+          <tbody data-draw="ov-largest-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- BHUBHARATI -->
+  <section class="tl-sec" id="bhubharati" role="tabpanel" hidden>
+    <p>Bhubharati is Telangana's land-records portal. This export is the location hierarchy down to survey number, with Telugu names alongside English. It holds no owner or extent details.</p>
+    <div class="tl-kpis">
+      <div class="tl-kpi"><span class="v" data-draw="bhu-k" data-key="districts" data-source="bhu_totals" data-field="districts" data-row="0">—</span><span class="l">Districts</span></div>
+      <div class="tl-kpi"><span class="v" data-draw="bhu-k" data-key="mandals" data-source="bhu_totals" data-field="mandals" data-row="0">—</span><span class="l">Mandals</span></div>
+      <div class="tl-kpi"><span class="v" data-draw="bhu-k" data-key="villages" data-source="bhu_totals" data-field="villages" data-row="0">—</span><span class="l">Villages</span></div>
+      <div class="tl-kpi"><span class="v" data-draw="bhu-k" data-key="survey_numbers" data-source="bhu_totals" data-field="survey_numbers" data-row="0">—</span><span class="l">Survey numbers</span></div>
+      <div class="tl-kpi"><span class="v" data-draw="bhu-k" data-key="sro_offices" data-source="bhu_totals" data-field="sro_offices" data-row="0">—</span><span class="l">Sub-Registrar offices</span></div>
+    </div>
+    <div class="tl-card" id="bhu-survey">
+      <h2>Survey numbers by district</h2>
+      <p class="muted">A survey number is the unit a land parcel is recorded under.</p>
+      <div class="tl-chart dash-skeleton" data-draw="bhu-chart" data-source="bhu_districts" style="min-height:640px"></div>
+    </div>
+    <div class="tl-card" id="bhu-table">
+      <h2>Districts</h2>
+      <div class="tl-tw">
+        <table data-source="bhu_districts" data-row-key="district">
+          <thead><tr><th data-field="district">District</th><th data-field="district_te">Telugu name</th><th class="num" data-field="mandals">Mandals</th><th class="num" data-field="villages">Villages</th><th class="num" data-field="survey_numbers">Survey numbers</th><th class="num" data-field="sro_offices">SRO offices</th></tr></thead>
+          <tbody data-draw="bhu-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- HMDA -->
+  <section class="tl-sec" id="hmda" role="tabpanel" hidden>
+    <p>The Hyderabad Metropolitan Development Authority publishes its approvals as registers. Each row is one file: its number, applicant, survey numbers and village, the permission type and release date, and links to the proceedings and plan PDFs where given.</p>
+    <div class="tl-kpis">
+      <div class="tl-kpi"><span class="v" data-draw="hmda-k" data-key="records" data-source="hmda_totals" data-field="records" data-row="0">—</span><span class="l">Approval records, 10 registers</span></div>
+      <div class="tl-kpi"><span class="v" data-draw="hmda-k" data-key="pages" data-source="hmda_totals" data-field="pages" data-row="0">—</span><span class="l">Website pages</span></div>
+      <div class="tl-kpi"><span class="v" data-draw="hmda-k" data-key="documents" data-source="hmda_totals" data-field="documents" data-row="0">—</span><span class="l">Linked documents</span></div>
+      <div class="tl-kpi"><span class="v" data-draw="hmda-k" data-key="tables" data-source="hmda_totals" data-field="tables" data-row="0">—</span><span class="l">Tables scraped from pages</span></div>
+    </div>
+    <div class="tl-card" id="hmda-years">
+      <h2>Approvals released per year</h2>
+      <p class="muted">Year read from the release date (building and single-window) or draft layout date (layouts). Rows without a readable date are left out.</p>
+      <div class="tl-legend">
+        <span><i class="tl-sw" data-sw="0"></i>Building permissions</span>
+        <span><i class="tl-sw" data-sw="1"></i>Layout permissions</span>
+        <span><i class="tl-sw" data-sw="2"></i>Single-window industrial</span>
+      </div>
+      <div class="tl-chart dash-skeleton" data-draw="hmda-chart" data-source="hmda_by_year" style="min-height:280px"></div>
+    </div>
+    <div class="tl-card" id="hmda-registers">
+      <h2>Registers</h2>
+      <div class="tl-tw">
+        <table data-source="hmda_registers" data-row-key="register">
+          <thead><tr><th data-field="register">Register</th><th data-field="file">File</th><th class="num" data-field="records">Records</th><th class="num" data-field="with_date">With a date</th><th class="num" data-field="first_year">First year</th><th class="num" data-field="last_year">Last year</th></tr></thead>
+          <tbody data-draw="hmda-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TGRAC -->
+  <section class="tl-sec" id="tgrac" role="tabpanel" hidden>
+    <p>TGRAC runs the state's ArcGIS map server. The catalogue lists every layer it publishes, with feature counts. Attribute tables (no geometry) were downloaded for 7 folders; the rest are listed only.</p>
+    <div class="tl-kpis">
+      <div class="tl-kpi"><span class="v" data-draw="tg-k" data-key="folders" data-source="tg_totals" data-field="folders" data-row="0">—</span><span class="l">Folders</span></div>
+      <div class="tl-kpi"><span class="v" data-draw="tg-k" data-key="layers" data-source="tg_totals" data-field="layers" data-row="0">—</span><span class="l">Layers in catalogue</span></div>
+      <div class="tl-kpi"><span class="v" data-draw="tg-k" data-key="records" data-source="tg_totals" data-field="records" data-row="0">—</span><span class="l">Features on the server</span></div>
+      <div class="tl-kpi"><span class="v" data-draw="tg-k" data-key="downloaded_layers" data-source="tg_totals" data-field="downloaded_layers" data-row="0">—</span><span class="l">Layers downloaded</span></div>
+      <div class="tl-kpi"><span class="v" data-draw="tg-k" data-key="downloaded_records" data-source="tg_totals" data-field="downloaded_records" data-row="0">—</span><span class="l">Feature rows downloaded</span></div>
+    </div>
+    <div class="tl-grid2">
+      <div class="tl-card" id="tg-top">
+        <h2>Folders with the most features</h2>
+        <p class="muted">Top 15 of the server's folders, by features in the catalogue.</p>
+        <div class="tl-chart dash-skeleton" data-draw="tg-chart" data-source="tgrac_folders" style="min-height:380px"></div>
+      </div>
+      <div class="tl-card" id="tg-geom">
+        <h2>Layers by geometry</h2>
+        <p class="muted">Group, raster and table layers carry no vector geometry.</p>
+        <div class="tl-chart dash-skeleton" data-draw="tg-geom-chart" data-source="tgrac_geometry"></div>
+      </div>
+    </div>
+    <div class="tl-card" id="tg-table">
+      <h2>All folders</h2>
+      <div class="tl-tw">
+        <table data-source="tgrac_folders" data-row-key="folder">
+          <thead><tr><th data-field="folder">Folder</th><th class="num" data-field="services">Services</th><th class="num" data-field="layers">Layers</th><th class="num" data-field="feature_layers">Feature layers</th><th class="num" data-field="records">Features</th><th class="num" data-field="downloaded_layers">Downloaded layers</th><th class="num" data-field="downloaded_records">Downloaded rows</th><th>Status</th></tr></thead>
+          <tbody data-draw="tg-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITES -->
+  <section class="tl-sec" id="sites" role="tabpanel" hidden>
+    <p>A crawler read public pages of six government sites and the HMDA website. For each it saved the page text, the documents linked from pages, and any HTML tables. Skipped pages were outside scope or failed to load.</p>
+    <div class="tl-card" id="sites-docs">
+      <h2>Documents linked, by site</h2>
+      <div class="tl-chart dash-skeleton" data-draw="sites-chart" data-source="sites"></div>
+    </div>
+    <div class="tl-card" id="sites-table">
+      <h2>Sites</h2>
+      <div class="tl-tw">
+        <table data-source="sites" data-row-key="site">
+          <thead><tr><th data-field="site">Site</th><th class="num" data-field="pages">Pages</th><th class="num" data-field="documents">Documents</th><th class="num" data-field="tables">Tables</th><th class="num" data-field="skipped_pages">Skipped pages</th><th class="num" data-field="download_failures">Failed downloads</th><th data-field="top_doc_types">Document types</th></tr></thead>
+          <tbody data-draw="sites-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="muted">TG RERA's largest table lists 1,532 complaint orders with complainant, respondent, project and date. HMDA's tables include officer lists, flyovers, layout plots and charges.</p>
+  </section>
+
+  <!-- FILES -->
+  <section class="tl-sec" id="files" role="tabpanel" hidden>
+    <p>Every CSV file in the four zips, with its row count and column names.</p>
+    <div class="tl-filters">
+      <select class="dash-select" id="inv-src" aria-label="Export">
+        <option value="">All exports</option>
+        <option>Bhubharati</option>
+        <option>HMDA</option>
+        <option>TGRAC GIS</option>
+        <option>Govt websites</option>
+      </select>
+      <select class="dash-select" id="inv-kind" aria-label="Kind">
+        <option value="">Datasets and tables</option>
+        <option value="Dataset">Datasets only</option>
+        <option value="Scraped table">Scraped tables only</option>
+      </select>
+      <input class="tl-input" id="inv-q" type="search" placeholder="Search file or column" aria-label="Search file or column">
+      <span class="muted" data-draw="inv-count">—</span>
+    </div>
+    <div class="tl-card" id="inv-table">
+      <div class="tl-tw">
+        <table data-source="inventory" data-row-key="path">
+          <thead><tr><th data-field="source">Export</th><th data-field="section">Section</th><th data-field="file">File</th><th class="num" data-field="records">Rows</th><th class="num" data-field="columns">Cols</th><th class="num" data-field="size_kb">KB</th><th data-field="column_names">Columns</th></tr></thead>
+          <tbody data-draw="inv-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section class="tl-sec" id="checklist" role="tabpanel" hidden>
+    <p>Each item is a field or record type that the KONU Telangana Property Intelligence source directory expects from a source. "Yes" means the extracted CSVs contain it.</p>
+    <p class="tl-lede">We have <b data-draw="ck-yes" data-source="ck_totals" data-field="yes" data-row="0">—</b> of <b data-draw="ck-all" data-source="ck_totals" data-field="items" data-row="0">—</b> expected items.</p>
+    <div class="tl-card" id="ck-chart-card">
+      <h2>Items covered, by source</h2>
+      <div class="tl-legend">
+        <span><i class="tl-sw tl-sw-ok"></i>Yes</span>
+        <span><i class="tl-sw tl-sw-no"></i>No</span>
+      </div>
+      <div class="tl-chart dash-skeleton" data-draw="ck-chart" data-source="ck_by_source"></div>
+    </div>
+    <div class="tl-filters">
+      <select class="dash-select" id="ck-status" aria-label="Status">
+        <option value="">Yes and No</option>
+        <option value="Yes">Yes only</option>
+        <option value="No">No only</option>
+      </select>
+    </div>
+    <div class="tl-card" id="ck-table">
+      <div class="tl-tw">
+        <table data-source="checklist" data-row-key="id">
+          <thead><tr><th data-field="source">Source</th><th data-field="item">What the directory expects</th><th data-field="status">Got it?</th><th data-field="evidence">What we have</th></tr></thead>
+          <tbody data-draw="ck-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  const fmt = d3.format(',');
+  const sfmt = (n) => d3.format('.3~s')(n).replace('G','B');
+  window.tlFmt = fmt; window.tlShort = sfmt;
+  const num = (v) => (v === null || v === undefined || v === '') ? 0 : +v;
+  window.tlNum = num;
+
+  // horizontal bar chart drawn into el
+  window.tlBars = function(el, rows, o){
+    el.replaceChildren();
+    const W = el.clientWidth || 400, bh = o.barH || 20, gap = 6;
+    const H = rows.length * (bh + gap) + 4;
+    const svg = d3.select(el).append('svg').attr('role','img').attr('aria-label', o.aria).attr('height', H).attr('viewBox', `0 0 ${W} ${H}`);
+    const probe = svg.append('g');
+    let lw = 0, vw = 0;
+    rows.forEach(r => {
+      const t = probe.append('text').text(o.label(r)); lw = Math.max(lw, t.node().getComputedTextLength()); t.remove();
+      const v = probe.append('text').text(o.fmt(o.value(r))); vw = Math.max(vw, v.node().getComputedTextLength()); v.remove();
+    });
+    probe.remove();
+    lw = Math.min(lw, W * 0.42);
+    const x0 = lw + 10, x1 = Math.max(x0 + 20, W - vw - 8);
+    const x = d3.scaleLinear().domain([0, d3.max(rows, o.value) || 1]).range([x0, x1]);
+    const tt = d3.select(el).append('div').attr('class','tl-tt').style('display','none');
+    const g = svg.selectAll('g.r').data(rows).join('g').attr('class','r').attr('transform', (d,i) => `translate(0,${i*(bh+gap)})`);
+    g.append('text').attr('x', lw).attr('y', bh/2).attr('dy','0.35em').attr('text-anchor','end').text(o.label);
+    g.append('rect').attr('x', x0).attr('y', 0).attr('height', bh).attr('rx', 2)
+      .attr('width', d => Math.max(1, x(o.value(d)) - x0)).style('fill', o.color || dash.colors[0]);
+    g.append('text').attr('class','vlabel').attr('x', d => x(o.value(d)) + 6).attr('y', bh/2).attr('dy','0.35em').text(d => o.fmt(o.value(d)));
+    g.append('rect').attr('x',0).attr('y',-gap/2).attr('width',W).attr('height',bh+gap).style('fill','transparent')
+      .on('mousemove', function(ev, d){
+        const [mx,my] = d3.pointer(ev, el);
+        tt.style('display','block').text(`${o.label(d)}: ${fmt(o.value(d))}${o.unit ? ' ' + o.unit : ''}`);
+        const tw = tt.node().offsetWidth;
+        tt.style('left', Math.min(mx + 12, W - tw) + 'px').style('top', (my - 30) + 'px');
+      })
+      .on('mouseleave', () => tt.style('display','none'));
+  };
+
+  window.tlStatus = function(el, s, what){
+    if (s.status === 'loading') return true;
+    el.classList.remove('dash-skeleton');
+    if (s.status !== 'ok') { el.replaceChildren(); const p = document.createElement('p'); p.className = 'muted'; p.textContent = s.status === 'error' ? `${what} could not be loaded.` : '—'; el.append(p); return true; }
+    return false;
+  };
+
+  window.tlRows = function(tbody, rows, cols, key){
+    tbody.replaceChildren(...rows.map(r => {
+      const tr = document.createElement('tr');
+      if (key) tr.dataset.key = encodeURIComponent(r[key]);
+      cols.forEach(c => {
+        const td = document.createElement('td');
+        const v = typeof c.get === 'function' ? c.get(r) : r[c.f];
+        if (v instanceof Node) td.append(v); else td.textContent = v ?? '';
+        if (c.num) td.className = 'num'; if (c.wrap) td.className = 'wrap';
+        tr.append(td);
+      });
+      return tr;
+    }));
+  };
+
+  // ---- calcs ----
+  dash.calc('by_source', {
+    inputs: ['inventory'], title: 'Files and rows by export', description: 'CSV files and total rows in each of the four zip exports.',
+    fn: (inventory) => {
+      const order = ['Bhubharati','HMDA','TGRAC GIS','Govt websites'];
+      return order.map(source => {
+        const f = inventory.filter(r => r.source === source);
+        return { source, files: f.length, records: d3.sum(f, r => +r.records || 0) };
+      });
+    }
+  });
+  dash.calc('totals', {
+    inputs: ['inventory'], title: 'All exports', description: 'CSV files and rows across all four zips.',
+    fn: (inventory) => [{ files: inventory.length, records: d3.sum(inventory, r => +r.records || 0) }]
+  });
+  dash.calc('bhu_totals', {
+    inputs: ['bhu_districts'], title: 'Bhubharati totals', description: 'Sums over the 32 districts.',
+    fn: (districts) => [{ districts: districts.length,
+      mandals: d3.sum(districts, r => +r.mandals), villages: d3.sum(districts, r => +r.villages),
+      survey_numbers: d3.sum(districts, r => +r.survey_numbers), sro_offices: d3.sum(districts, r => +r.sro_offices) }]
+  });
+  dash.calc('hmda_totals', {
+    inputs: ['hmda_registers', 'inventory'], title: 'HMDA totals', description: 'Register records, and the HMDA website crawl from the file inventory.',
+    fn: (registers, inventory) => {
+      const site = (file) => { const r = inventory.find(x => x.source === 'HMDA' && x.path === 'site/' + file); return r ? +r.records : 0; };
+      return [{ records: d3.sum(registers, r => +r.records), pages: site('pages.csv'), documents: site('documents.csv'), tables: site('tables.csv') }];
+    }
+  });
+  dash.calc('tg_totals', {
+    inputs: ['tgrac_folders'], title: 'TGRAC catalogue totals', description: 'Sums over all folders in the ArcGIS catalogue.',
+    fn: (folders) => [{ folders: folders.length, layers: d3.sum(folders, r => +r.layers), records: d3.sum(folders, r => +r.records),
+      downloaded_layers: d3.sum(folders, r => +r.downloaded_layers), downloaded_records: d3.sum(folders, r => +r.downloaded_records) }]
+  });
+})();
+</script>
+
+<script>
+// tabs
+(function(){
+  const tabs = () => document.querySelectorAll('.tl-tab');
+  const secs = () => document.querySelectorAll('.tl-sec');
+  function show(id){
+    let found = false;
+    secs().forEach(s => { if (s.id === id) found = true; });
+    if (!found) id = 'overview';
+    secs().forEach(s => { s.hidden = s.id !== id; });
+    tabs().forEach(t => t.setAttribute('aria-selected', t.dataset.tab === id ? 'true' : 'false'));
+    dash.setLink(id === 'overview' ? null : id);
+  }
+  window.tlShow = show;
+  document.addEventListener('click', (ev) => {
+    const t = ev.target.closest && ev.target.closest('[data-tab],[data-goto]');
+    if (!t) return;
+    show(t.dataset.tab || t.dataset.goto);
+  });
+  const h = (location.hash || '').slice(1);
+  if (h) show(h);
+  let prev = null;
+  window.addEventListener('beforeprint', () => { if (prev === null) { prev = [...secs()].find(s => !s.hidden)?.id || 'overview'; } secs().forEach(s => { s.hidden = false; }); });
+  window.addEventListener('afterprint', () => { if (prev !== null) { show(prev); prev = null; } });
+  dash.onData(() => {
+    document.querySelectorAll('.tl-sw').forEach(s => { s.style.background = dash.colors[+s.dataset.sw]; });
+  });
+})();
+</script>
+
+<script>
+// overview drawings
+(function(){
+  const fmt = tlFmt, sfmt = tlShort;
+  dash.draw('t-files', el => { const s = dash.data('totals'); el.textContent = s.status === 'ok' ? fmt(s.data[0].files) : '—'; });
+  dash.draw('t-records', el => { const s = dash.data('totals'); el.textContent = s.status === 'ok' ? fmt(s.data[0].records) : '—'; });
+  dash.draw('t-top-src', el => { const s = dash.data('by_source'); el.textContent = s.status === 'ok' ? d3.greatest(s.data, r => r.records).source : '—'; });
+  dash.draw('t-top-n', el => { const s = dash.data('by_source'); el.textContent = s.status === 'ok' ? fmt(d3.greatest(s.data, r => r.records).records) : '—'; });
+  dash.draw('src-n', el => {
+    const s = dash.data('by_source');
+    const src = decodeURIComponent((el.dataset.where || '').split('=')[1] || '');
+    const r = s.status === 'ok' ? s.data.find(x => x.source === src) : null;
+    el.textContent = r ? fmt(r.records) + ' rows' : '—';
+  });
+  dash.draw('ov-rows-chart', el => {
+    const s = dash.data('by_source'); if (tlStatus(el, s, 'This chart')) return;
+    tlBars(el, s.data, { label: r => r.source, value: r => r.records, fmt: sfmt, unit: 'rows', aria: 'Bar chart of rows in each export' });
+  });
+  dash.draw('ov-files-chart', el => {
+    const s = dash.data('by_source'); if (tlStatus(el, s, 'This chart')) return;
+    tlBars(el, s.data, { label: r => r.source, value: r => r.files, fmt: fmt, unit: 'files', aria: 'Bar chart of CSV files in each export', color: dash.colors[1] });
+  });
+  dash.draw('ov-largest-body', el => {
+    const s = dash.data('inventory'); if (s.status !== 'ok') { el.replaceChildren(); return; }
+    const rows = [...s.data].sort((a,b) => (+b.records) - (+a.records)).slice(0, 10);
+    tlRows(el, rows, [{f:'source'},{f:'file'},{f:'section'},{get: r => fmt(+r.records), num:1},{f:'columns', num:1}], 'path');
+  });
+})();
+</script>
+
+<script>
+// bhubharati
+(function(){
+  const fmt = tlFmt, sfmt = tlShort;
+  dash.draw('bhu-k', el => { const s = dash.data('bhu_totals'); el.textContent = s.status === 'ok' ? fmt(s.data[0][el.dataset.key]) : '—'; });
+  dash.draw('bhu-chart', el => {
+    const s = dash.data('bhu_districts'); if (tlStatus(el, s, 'This chart')) return;
+    const rows = [...s.data].sort((a,b) => (+b.survey_numbers) - (+a.survey_numbers));
+    tlBars(el, rows, { label: r => r.district, value: r => +r.survey_numbers, fmt: sfmt, unit: 'survey numbers', barH: 14, aria: 'Bar chart of survey numbers in each of 32 districts' });
+  });
+  dash.draw('bhu-body', el => {
+    const s = dash.data('bhu_districts'); if (s.status !== 'ok') { el.replaceChildren(); return; }
+    const rows = [...s.data].sort((a,b) => (+b.survey_numbers) - (+a.survey_numbers));
+    tlRows(el, rows, [{f:'district'},{f:'district_te'},{get:r=>fmt(+r.mandals),num:1},{get:r=>fmt(+r.villages),num:1},{get:r=>fmt(+r.survey_numbers),num:1},{get:r=>fmt(+r.sro_offices),num:1}], 'district');
+  });
+})();
+</script>
+
+<script>
+// hmda
+(function(){
+  const fmt = tlFmt;
+  dash.draw('hmda-k', el => { const s = dash.data('hmda_totals'); el.textContent = s.status === 'ok' ? fmt(s.data[0][el.dataset.key]) : '—'; });
+  dash.draw('hmda-chart', el => {
+    const s = dash.data('hmda_by_year'); if (tlStatus(el, s, 'This chart')) return;
+    el.replaceChildren();
+    const series = ['Building permissions','Layout permissions','Single-window industrial permissions'];
+    const data = s.data.map(r => ({ year: +r.year, ...Object.fromEntries(series.map(k => [k, +r[k]])) }));
+    const W = el.clientWidth || 500, H = 260, m = { t: 10, r: 12, b: 26, l: 40 };
+    const x = d3.scaleLinear().domain(d3.extent(data, d => d.year)).range([m.l, W - m.r]);
+    const y = d3.scaleLinear().domain([0, d3.max(data, d => d3.max(series, k => d[k])) || 1]).nice().range([H - m.b, m.t]);
+    const svg = d3.select(el).append('svg').attr('role','img').attr('aria-label','Line chart of HMDA approvals released per year, by register').attr('height', H).attr('viewBox', `0 0 ${W} ${H}`);
+    svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(-(W - m.l - m.r)).tickFormat(d3.format('~s')))
+      .call(g => g.select('.domain').remove()).call(g => g.selectAll('line').style('stroke', 'var(--cds-chart-grid)'));
+    const nt = Math.max(2, Math.min(10, Math.floor((W - m.l) / 60)));
+    svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(nt).tickFormat(d3.format('d')))
+      .call(g => g.selectAll('line,path').style('stroke', 'var(--cds-chart-axis)'));
+    series.forEach((k, i) => {
+      svg.append('path').datum(data).attr('fill','none').style('stroke', dash.colors[i]).attr('stroke-width', 2)
+        .attr('d', d3.line().x(d => x(d.year)).y(d => y(d[k])));
+    });
+    const tt = d3.select(el).append('div').attr('class','tl-tt').style('display','none');
+    const vline = svg.append('line').attr('y1', m.t).attr('y2', H - m.b).style('stroke','var(--cds-chart-reference)').style('display','none');
+    svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).style('fill','transparent')
+      .on('mousemove', function(ev){
+        const [mx, my] = d3.pointer(ev, el);
+        const yr = Math.round(x.invert(mx)); const d = data.find(r => r.year === yr);
+        if (!d) { tt.style('display','none'); vline.style('display','none'); return; }
+        vline.attr('x1', x(yr)).attr('x2', x(yr)).style('display', null);
+        tt.style('display','block').text(`${yr}: building ${fmt(d[series[0]])} · layout ${fmt(d[series[1]])} · single-window ${fmt(d[series[2]])}`);
+        const tw = tt.node().offsetWidth;
+        tt.style('left', Math.max(0, Math.min(mx + 12, W - tw)) + 'px').style('top', Math.max(0, my - 34) + 'px');
+      })
+      .on('mouseleave', () => { tt.style('display','none'); vline.style('display','none'); });
+  });
+  dash.draw('hmda-body', el => {
+    const s = dash.data('hmda_registers'); if (s.status !== 'ok') { el.replaceChildren(); return; }
+    tlRows(el, s.data, [{f:'register'},{f:'file'},{get:r=>fmt(+r.records),num:1},{get:r=>fmt(+r.with_date),num:1},{f:'first_year',num:1},{f:'last_year',num:1}], 'register');
+  });
+})();
+</script>
+
+<script>
+// tgrac
+(function(){
+  const fmt = tlFmt, sfmt = tlShort;
+  dash.draw('tg-k', el => { const s = dash.data('tg_totals'); el.textContent = s.status === 'ok' ? (el.dataset.key === 'records' || el.dataset.key === 'downloaded_records' ? sfmt(s.data[0][el.dataset.key]) : fmt(s.data[0][el.dataset.key])) : '—'; });
+  dash.draw('tg-chart', el => {
+    const s = dash.data('tgrac_folders'); if (tlStatus(el, s, 'This chart')) return;
+    const rows = [...s.data].sort((a,b) => (+b.records) - (+a.records)).slice(0, 15);
+    tlBars(el, rows, { label: r => r.folder, value: r => +r.records, fmt: sfmt, unit: 'features', barH: 16, aria: 'Bar chart of the 15 TGRAC folders with the most features' });
+  });
+  dash.draw('tg-geom-chart', el => {
+    const s = dash.data('tgrac_geometry'); if (tlStatus(el, s, 'This chart')) return;
+    tlBars(el, s.data, { label: r => r.geometry, value: r => +r.layers, fmt: fmt, unit: 'layers', aria: 'Bar chart of TGRAC layers by geometry type', color: dash.colors[1] });
+  });
+  dash.draw('tg-body', el => {
+    const s = dash.data('tgrac_folders'); if (s.status !== 'ok') { el.replaceChildren(); return; }
+    const rows = [...s.data].sort((a,b) => (+b.downloaded_layers) - (+a.downloaded_layers) || (+b.records) - (+a.records));
+    const pill = (r) => { const sp = document.createElement('span'); const d = +r.downloaded_layers, f = +r.feature_layers;
+      sp.className = 'tl-pill' + (d > 0 && d >= f ? ' ok' : d > 0 ? ' part' : '');
+      sp.textContent = d === 0 ? 'Catalogue only' : d >= f ? 'Downloaded' : 'Partly downloaded'; return sp; };
+    tlRows(el, rows, [{f:'folder'},{f:'services',num:1},{f:'layers',num:1},{f:'feature_layers',num:1},{get:r=>fmt(+r.records),num:1},{f:'downloaded_layers',num:1},{get:r=>fmt(+r.downloaded_records),num:1},{get:pill}], 'folder');
+  });
+})();
+</script>
+
+<script>
+// sites + files
+(function(){
+  const fmt = tlFmt;
+  dash.draw('sites-chart', el => {
+    const s = dash.data('sites'); if (tlStatus(el, s, 'This chart')) return;
+    const rows = [...s.data].sort((a,b) => (+b.documents) - (+a.documents));
+    tlBars(el, rows, { label: r => r.site, value: r => +r.documents, fmt: fmt, unit: 'documents', aria: 'Bar chart of documents linked from each website' });
+  });
+  dash.draw('sites-body', el => {
+    const s = dash.data('sites'); if (s.status !== 'ok') { el.replaceChildren(); return; }
+    tlRows(el, s.data, [{f:'site'},{f:'pages',num:1},{get:r=>fmt(+r.documents),num:1},{f:'tables',num:1},{f:'skipped_pages',num:1},{f:'download_failures',num:1},{f:'top_doc_types'}], 'site');
+  });
+
+  const filt = () => {
+    const v = (id) => { const e = document.getElementById(id); return e ? e.value : ''; };
+    return { src: v('inv-src'), kind: v('inv-kind'), q: v('inv-q').trim().toLowerCase() };
+  };
+  const filtered = (data) => { const f = filt(); return data.filter(r => (!f.src || r.source === f.src) && (!f.kind || r.kind === f.kind) &&
+    (!f.q || (r.file + ' ' + r.column_names + ' ' + r.section).toLowerCase().includes(f.q))); };
+  dash.draw('inv-body', el => {
+    const s = dash.data('inventory'); if (s.status !== 'ok') { el.replaceChildren(); return; }
+    const rows = filtered(s.data).sort((a,b) => a.source.localeCompare(b.source) || a.section.localeCompare(b.section) || (+b.records) - (+a.records));
+    tlRows(el, rows, [{f:'source'},{f:'section'},{f:'file'},{get:r=>fmt(+r.records),num:1},{f:'columns',num:1},{f:'size_kb',num:1},{f:'column_names',wrap:1}], 'path');
+  });
+  dash.draw('inv-count', el => {
+    const s = dash.data('inventory'); if (s.status !== 'ok') { el.textContent = '—'; return; }
+    const r = filtered(s.data); el.textContent = `${fmt(r.length)} files · ${fmt(d3.sum(r, x => +x.records))} rows`;
+  });
+  const rerun = () => { dash.draw('inv-body'); dash.draw('inv-count'); };
+  ['inv-src','inv-kind'].forEach(id => { const e = document.getElementById(id); if (e) e.addEventListener('change', rerun); });
+  const q = document.getElementById('inv-q'); if (q) q.addEventListener('input', rerun);
+})();
+</script>
+
+<script>
+// coverage checklist
+(function(){
+  const fmt = tlFmt;
+  dash.calc('ck_totals', {
+    inputs: ['checklist'], title: 'Checklist totals', description: 'Expected items, and how many the extracted data has.',
+    fn: (checklist) => [{ items: checklist.length, yes: checklist.filter(r => r.status === 'Yes').length }]
+  });
+  dash.calc('ck_by_source', {
+    inputs: ['checklist'], title: 'Checklist by source', description: 'Yes and No items counted per source, in checklist order.',
+    fn: (checklist) => {
+      const order = [...new Set(checklist.map(r => r.source))];
+      return order.map(source => { const f = checklist.filter(r => r.source === source);
+        return { source, yes: f.filter(r => r.status === 'Yes').length, no: f.filter(r => r.status !== 'Yes').length }; });
+    }
+  });
+  dash.draw('ck-yes', el => { const s = dash.data('ck_totals'); el.textContent = s.status === 'ok' ? fmt(s.data[0].yes) : '—'; });
+  dash.draw('ck-all', el => { const s = dash.data('ck_totals'); el.textContent = s.status === 'ok' ? fmt(s.data[0].items) : '—'; });
+  dash.draw('ck-chart', el => {
+    const s = dash.data('ck_by_source'); if (tlStatus(el, s, 'This chart')) return;
+    el.replaceChildren();
+    const rows = s.data, W = el.clientWidth || 400, bh = 18, gap = 8;
+    const H = rows.length * (bh + gap);
+    const svg = d3.select(el).append('svg').attr('role','img').attr('aria-label','Stacked bar chart of checklist items covered and missing for each source').attr('height', H).attr('viewBox', `0 0 ${W} ${H}`);
+    let lw = 0; rows.forEach(r => { const t = svg.append('text').text(r.source); lw = Math.max(lw, t.node().getComputedTextLength()); t.remove(); });
+    lw = Math.min(lw, W * 0.45);
+    const x0 = lw + 10, x1 = W - 60;
+    const x = d3.scaleLinear().domain([0, d3.max(rows, r => r.yes + r.no) || 1]).range([0, Math.max(20, x1 - x0)]);
+    const tt = d3.select(el).append('div').attr('class','tl-tt').style('display','none');
+    const g = svg.selectAll('g.r').data(rows).join('g').attr('class','r').attr('transform', (d,i) => `translate(0,${i*(bh+gap)})`);
+    g.append('text').attr('x', lw).attr('y', bh/2).attr('dy','0.35em').attr('text-anchor','end').text(d => d.source);
+    g.append('rect').attr('x', x0).attr('height', bh).attr('width', d => x(d.yes)).style('fill','var(--color-ok)');
+    g.append('rect').attr('x', d => x0 + x(d.yes)).attr('height', bh).attr('width', d => x(d.no)).style('fill','var(--color-bad)');
+    g.append('text').attr('class','vlabel').attr('x', d => x0 + x(d.yes + d.no) + 6).attr('y', bh/2).attr('dy','0.35em').text(d => `${d.yes} / ${d.yes + d.no}`);
+    g.append('rect').attr('x',0).attr('y',-gap/2).attr('width',W).attr('height',bh+gap).style('fill','transparent')
+      .on('mousemove', function(ev, d){ const [mx,my] = d3.pointer(ev, el);
+        tt.style('display','block').text(`${d.source}: ${d.yes} yes, ${d.no} no`);
+        const tw = tt.node().offsetWidth; tt.style('left', Math.min(mx + 12, W - tw) + 'px').style('top', (my - 30) + 'px'); })
+      .on('mouseleave', () => tt.style('display','none'));
+  });
+  dash.draw('ck-body', el => {
+    const s = dash.data('checklist'); if (s.status !== 'ok') { el.replaceChildren(); return; }
+    const sel = document.getElementById('ck-status'); const f = sel ? sel.value : '';
+    const rows = s.data.filter(r => !f || r.status === f);
+    const pill = (r) => { const sp = document.createElement('span'); sp.className = 'tl-pill ' + (r.status === 'Yes' ? 'ok' : 'no'); sp.textContent = r.status; return sp; };
+    tlRows(el, rows, [{f:'source'},{f:'item'},{get:pill},{f:'evidence',wrap:1}], 'id');
+  });
+  const sel = document.getElementById('ck-status'); if (sel) sel.addEventListener('change', () => dash.draw('ck-body'));
+})();
+</script>
