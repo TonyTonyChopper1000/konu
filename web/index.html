@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telangana Land Data Inventory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="head">
+        <h1>Telangana Land Data Inventory</h1>
+        <p class="lede" id="lede">Loading…</p>
+      </header>
+
+      <nav class="tabs" role="tablist" aria-label="Data sources">
+        <button class="tab" role="tab" data-tab="overview">Overview</button>
+        <button class="tab" role="tab" data-tab="bhubharati">Bhubharati</button>
+        <button class="tab" role="tab" data-tab="hmda">HMDA</button>
+        <button class="tab" role="tab" data-tab="tgrac">TGRAC GIS</button>
+        <button class="tab" role="tab" data-tab="sites">Govt websites</button>
+        <button class="tab" role="tab" data-tab="files">All files</button>
+        <button class="tab" role="tab" data-tab="checklist">Coverage checklist</button>
+      </nav>
+
+      <!-- OVERVIEW -->
+      <section class="sec" id="overview" role="tabpanel">
+        <div class="src-cards" id="src-cards"></div>
+        <p class="muted">Numbers on these cards are rows across all CSV files of that export.</p>
+        <div class="grid2">
+          <div class="card"><h2>Rows by export</h2><div class="chart" id="ov-rows"></div></div>
+          <div class="card"><h2>Files by export</h2><div class="chart" id="ov-files"></div></div>
+        </div>
+        <div class="card">
+          <h2>Largest files</h2>
+          <p class="muted">The ten files with the most rows, across all four exports.</p>
+          <div class="tw"><table id="ov-largest"></table></div>
+        </div>
+      </section>
+
+      <!-- BHUBHARATI -->
+      <section class="sec" id="bhubharati" role="tabpanel" hidden>
+        <p>Bhubharati is Telangana's land-records portal. This export is the location hierarchy down to survey number, with Telugu names alongside English. It holds no owner or extent details.</p>
+        <div class="kpis" id="bhu-kpis"></div>
+        <div class="card">
+          <h2>Survey numbers by district</h2>
+          <p class="muted">A survey number is the unit a land parcel is recorded under.</p>
+          <div class="chart" id="bhu-chart"></div>
+        </div>
+        <div class="card"><h2>Districts</h2><div class="tw"><table id="bhu-table"></table></div></div>
+      </section>
+
+      <!-- HMDA -->
+      <section class="sec" id="hmda" role="tabpanel" hidden>
+        <p>The Hyderabad Metropolitan Development Authority publishes its approvals as registers. Each row is one file: its number, applicant, survey numbers and village, the permission type and release date, and links to the proceedings and plan PDFs where given.</p>
+        <div class="kpis" id="hmda-kpis"></div>
+        <div class="card">
+          <h2>Approvals released per year</h2>
+          <p class="muted">Year read from the release date (building and single-window) or draft layout date (layouts). Rows without a readable date are left out.</p>
+          <div class="legend" id="hmda-legend"></div>
+          <div class="chart" id="hmda-chart"></div>
+        </div>
+        <div class="card"><h2>Registers</h2><div class="tw"><table id="hmda-table"></table></div></div>
+      </section>
+
+      <!-- TGRAC -->
+      <section class="sec" id="tgrac" role="tabpanel" hidden>
+        <p>TGRAC runs the state's ArcGIS map server. The catalogue lists every layer it publishes, with feature counts. Attribute tables (no geometry) were downloaded for 7 folders; the rest are listed only.</p>
+        <div class="kpis" id="tg-kpis"></div>
+        <div class="grid2">
+          <div class="card">
+            <h2>Folders with the most features</h2>
+            <p class="muted">Top 15 of the server's folders, by features in the catalogue.</p>
+            <div class="chart" id="tg-chart"></div>
+          </div>
+          <div class="card">
+            <h2>Layers by geometry</h2>
+            <p class="muted">Group, raster and table layers carry no vector geometry.</p>
+            <div class="chart" id="tg-geom"></div>
+          </div>
+        </div>
+        <div class="card"><h2>All folders</h2><div class="tw"><table id="tg-table"></table></div></div>
+      </section>
+
+      <!-- SITES -->
+      <section class="sec" id="sites" role="tabpanel" hidden>
+        <p>A crawler read public pages of six government sites and the HMDA website. For each it saved the page text, the documents linked from pages, and any HTML tables. Skipped pages were outside scope or failed to load.</p>
+        <div class="card"><h2>Documents linked, by site</h2><div class="chart" id="sites-chart"></div></div>
+        <div class="card"><h2>Sites</h2><div class="tw"><table id="sites-table"></table></div></div>
+      </section>
+
+      <!-- FILES -->
+      <section class="sec" id="files" role="tabpanel" hidden>
+        <p>Every CSV file in the four zips, with its row count and column names.</p>
+        <div class="filters">
+          <select id="inv-src" aria-label="Export">
+            <option value="">All exports</option>
+            <option>Bhubharati</option>
+            <option>HMDA</option>
+            <option>TGRAC GIS</option>
+            <option>Govt websites</option>
+          </select>
+          <select id="inv-kind" aria-label="Kind">
+            <option value="">Datasets and tables</option>
+            <option value="Dataset">Datasets only</option>
+            <option value="Scraped table">Scraped tables only</option>
+          </select>
+          <input id="inv-q" type="search" placeholder="Search file or column" aria-label="Search file or column" />
+          <span class="muted" id="inv-count"></span>
+        </div>
+        <div class="card"><div class="tw"><table id="inv-table"></table></div></div>
+      </section>
+
+      <!-- CHECKLIST -->
+      <section class="sec" id="checklist" role="tabpanel" hidden>
+        <p>Each item is a field or record type that the KONU Telangana Property Intelligence source directory expects from a source. "Yes" means the extracted CSVs contain it.</p>
+        <p class="lede" id="ck-lede"></p>
+        <div class="card">
+          <h2>Items covered, by source</h2>
+          <div class="legend"><span><i class="sw sw-ok"></i>Yes</span><span><i class="sw sw-no"></i>No</span></div>
+          <div class="chart" id="ck-chart"></div>
+        </div>
+        <div class="filters">
+          <select id="ck-status" aria-label="Status">
+            <option value="">Yes and No</option>
+            <option value="Yes">Yes only</option>
+            <option value="No">No only</option>
+          </select>
+        </div>
+        <div class="card"><div class="tw"><table id="ck-table"></table></div></div>
+      </section>
+
+      <footer class="muted foot">Source: summary CSVs in <code>dashboard/data/</code>, built by <code>dashboard/scripts/build.py</code> from the four crawler zips.</footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

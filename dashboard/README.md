@@ -29,4 +29,4 @@ python3 dashboard/scripts/build.py data out profile.json
 | `sites.csv` | Pages, documents and tables per crawled website |
 | `checklist.csv` | Coverage checklist: items the KONU property-intelligence source directory expects, marked Yes/No (written by hand, not by `build.py`) |
 
-`index.html` is a copy of the dashboard page code; it only runs inside the dashboard.
+`index.html` is a copy of the claude.ai dashboard page code; it only runs inside that dashboard. For a version that runs locally, see the Vite app in `../web/`.
