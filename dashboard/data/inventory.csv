@@ -1,0 +1,261 @@
+source,section,kind,file,path,records,columns,column_names,size_kb
+Bhubharati,Land records,Dataset,districts.csv,districts.csv,32,3,district_id; district_name; district_name_te,1.7
+Bhubharati,Land records,Dataset,errors.csv,errors.csv,0,3,level; key; at,0.0
+Bhubharati,Land records,Dataset,mandals.csv,mandals.csv,606,6,district_id; district_name; mandal_id; mandal_name; mandal_name_te; fetched_at,52.3
+Bhubharati,Land records,Dataset,sro_offices.csv,sro_offices.csv,605,5,district_id; district_name; sro_id; sro_name; fetched_at,35.4
+Bhubharati,Land records,Dataset,survey_numbers.csv,survey_numbers.csv,4260897,8,district_id; district_name; mandal_id; mandal_name; village_id; village_name; survey_no; fetched_at,385062.6
+Bhubharati,Land records,Dataset,villages.csv,villages.csv,10889,8,district_id; district_name; mandal_id; mandal_name; village_id; village_name; village_name_te; fetched_at,1199.8
+Govt websites,ghmc,Dataset,documents.csv,ghmc/documents.csv,105,6,page_title; page_url; link_text; document_url; type; saved_as,23.2
+Govt websites,ghmc,Dataset,download_failures.csv,ghmc/download_failures.csv,0,2,document_url; reason,0.0
+Govt websites,ghmc,Dataset,pages.csv,ghmc/pages.csv,3,5,title; url; tables; documents; text,20.3
+Govt websites,ghmc,Dataset,skipped_pages.csv,ghmc/skipped_pages.csv,44,2,url; reason,3.6
+Govt websites,ghmc,Dataset,tables.csv,ghmc/tables.csv,0,4,page_title; page_url; table_file; rows,0.0
+Govt websites,ghmc,Scraped table,EODBReport-aspx-1.csv,ghmc/tables/EODBReport-aspx-1.csv,8,2,Particulars; Details,0.6
+Govt websites,ghmc,Scraped table,EODBReport-aspx-2.csv,ghmc/tables/EODBReport-aspx-2.csv,0,11,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; ...,0.0
+Govt websites,ghmc,Scraped table,Trade-aspx-1.csv,ghmc/tables/Trade-aspx-1.csv,0,4,Category:; --Select Category- EATING ESTABLISHMENTS MEDICAL ESTABLISHMENTS VETERNARY ESTABLISHMENTS DANGEROUS AND OFFENSIVE TRADES GENERAL ESTABLISHMENTS OR OFFICES; RoadType:; ,0.2
+Govt websites,tgbpass,Dataset,documents.csv,tgbpass/documents.csv,1,6,page_title; page_url; link_text; document_url; type; saved_as,0.3
+Govt websites,tgbpass,Dataset,download_failures.csv,tgbpass/download_failures.csv,0,2,document_url; reason,0.0
+Govt websites,tgbpass,Dataset,pages.csv,tgbpass/pages.csv,3,5,title; url; tables; documents; text,26.6
+Govt websites,tgbpass,Dataset,skipped_pages.csv,tgbpass/skipped_pages.csv,2,2,url; reason,0.2
+Govt websites,tgbpass,Dataset,tables.csv,tgbpass/tables.csv,0,4,page_title; page_url; table_file; rows,0.0
+Govt websites,tgrac,Dataset,documents.csv,tgrac/documents.csv,20,6,page_title; page_url; link_text; document_url; type; saved_as,5.6
+Govt websites,tgrac,Dataset,download_failures.csv,tgrac/download_failures.csv,0,2,document_url; reason,0.0
+Govt websites,tgrac,Dataset,pages.csv,tgrac/pages.csv,10,5,title; url; tables; documents; text,30.3
+Govt websites,tgrac,Dataset,skipped_pages.csv,tgrac/skipped_pages.csv,51,2,url; reason,5.0
+Govt websites,tgrac,Dataset,tables.csv,tgrac/tables.csv,2,4,page_title; page_url; table_file; rows,0.4
+Govt websites,tgrac,Scraped table,trac-governing-body-php-1.csv,tgrac/tables/trac-governing-body-php-1.csv,13,3,Sl.No; Official Designation; Designation In,0.7
+Govt websites,tgrac,Scraped table,trac-management-team-php-1.csv,tgrac/tables/trac-management-team-php-1.csv,3,2,Technical; Administration,0.4
+Govt websites,rera,Dataset,documents.csv,rera/documents.csv,3949,6,page_title; page_url; link_text; document_url; type; saved_as,1140.2
+Govt websites,rera,Dataset,download_failures.csv,rera/download_failures.csv,0,2,document_url; reason,0.0
+Govt websites,rera,Dataset,pages.csv,rera/pages.csv,200,5,title; url; tables; documents; text,792.4
+Govt websites,rera,Dataset,skipped_pages.csv,rera/skipped_pages.csv,10,2,url; reason,1.2
+Govt websites,rera,Dataset,tables.csv,rera/tables.csv,21,4,page_title; page_url; table_file; rows,3.0
+Govt websites,rera,Scraped table,247564irgjsdghfdgfd-TG-RERA-98498dsgdgyhdfjbhy43-1.csv,rera/tables/247564irgjsdghfdgfd-TG-RERA-98498dsgdgyhdfjbhy43-1.csv,12,5,Sr.No.; Order No.; Subject; Date; View Document,2.2
+Govt websites,rera,Scraped table,247564irgjsdghfdgfd-TG-RERA-wergsdgvsdhguoiwyr-1.csv,rera/tables/247564irgjsdghfdgfd-TG-RERA-wergsdgvsdhguoiwyr-1.csv,16,4,Sr.No; Subject; Date; View Document,2.6
+Govt websites,rera,Scraped table,384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh-1.csv,rera/tables/384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh-1.csv,46,4,Sr.No; Subject; Date; View Document,6.2
+Govt websites,rera,Scraped table,586784u3y5dsgfg-TG-RERA-45678jklshihnfgsfdg-1.csv,rera/tables/586784u3y5dsgfg-TG-RERA-45678jklshihnfgsfdg-1.csv,1532,10,Sr.No; Subject; Date; Complaint No.; Complainant; Respondent; Project; Category; Brief / Summary; View Document,237.0
+Govt websites,rera,Scraped table,658421fgkjdffdffy99545-TG-RERA-hjzdsfgjuysdfgmjsvdfhgnhd-1.csv,rera/tables/658421fgkjdffdffy99545-TG-RERA-hjzdsfgjuysdfgmjsvdfhgnhd-1.csv,66,4,Sr.No; Subject; Date; View Document,8.6
+Govt websites,rera,Scraped table,785ghfgDaily-TG-RERA-15121976REAT-1.csv,rera/tables/785ghfgDaily-TG-RERA-15121976REAT-1.csv,12,4,Sr.No; Subject; Date; PDF,1.8
+Govt websites,rera,Scraped table,8360954urgnksfjdbf-TG-RERA-48957rijgkldjghdhgfhd-1.csv,rera/tables/8360954urgnksfjdbf-TG-RERA-48957rijgkldjghdhgfhd-1.csv,1,4,Sr.No; Subject; Date; View Document,0.2
+Govt websites,rera,Scraped table,AnnualReports-TG-RERA-15121976Annual-Reports-1.csv,rera/tables/AnnualReports-TG-RERA-15121976Annual-Reports-1.csv,4,4,Sr.No; Subject; Date; View Document,0.5
+Govt websites,rera,Scraped table,AnnualReports-TG-RERA-15121976REAT-Orders-1.csv,rera/tables/AnnualReports-TG-RERA-15121976REAT-Orders-1.csv,65,4,Sr.No; Subject; Date; View Document,9.9
+Govt websites,rera,Scraped table,Home-GetTilesCount-1.csv,rera/tables/Home-GetTilesCount-1.csv,1,5,Total Complaints Received; Complaints Documents Submission Pending; Hearing Schedule Pending; Hearing In-Process; Complainants Matter Disposed,0.2
+Govt websites,rera,Scraped table,Home-Help-1.csv,rera/tables/Home-Help-1.csv,9,3,Screen Reader; Website; Free / Commercial,1.0
+Govt websites,rera,Scraped table,Home-Help-2.csv,rera/tables/Home-Help-2.csv,4,2,Document Type; Plug-in for Download,1.6
+Govt websites,rera,Scraped table,Home-Renewed-1.csv,rera/tables/Home-Renewed-1.csv,11,8,Sr.No; Registration Number; Project Name; Promoter / Agent Name; Complaint Number; Authority Order; View Authority Order; Photo(s),2.8
+Govt websites,rera,Scraped table,Home-Revoked-1.csv,rera/tables/Home-Revoked-1.csv,22,6,Sr.No; Project / Agent Name; Promoter Name; #; Document Name; View Document,2.0
+Govt websites,rera,Scraped table,Home-ViewNews-1.csv,rera/tables/Home-ViewNews-1.csv,7,3,Sl No.; Date; TGRERA Information Updates,1.4
+Govt websites,rera,Scraped table,Proceedings-TG-RERA-15121976Proceedings-1.csv,rera/tables/Proceedings-TG-RERA-15121976Proceedings-1.csv,2,4,Sr.No; Subject; Date; View Document,0.6
+Govt websites,rera,Scraped table,PublicNoticesReports-TG-RERA-15121976PublicNotices-Reports-1.csv,rera/tables/PublicNoticesReports-TG-RERA-15121976PublicNotices-Reports-1.csv,4,4,Sr.No; Subject; Date; View Document,0.7
+Govt websites,rera,Scraped table,SUOMOTU-TG-RERA-15121976ORDERS-1.csv,rera/tables/SUOMOTU-TG-RERA-15121976ORDERS-1.csv,54,4,Sr.No; Subject; Date; View Document,7.9
+Govt websites,rera,Scraped table,amavlnjoiu7532845972-TG-RERA-74698ijgsdfjgbi349529-1.csv,rera/tables/amavlnjoiu7532845972-TG-RERA-74698ijgsdfjgbi349529-1.csv,24,5,Sr.No; Circular No; Subject; Date; View Document,5.9
+Govt websites,rera,Scraped table,sfjkdghryttihrwughdk-TG-RERA-54670erogjfiodgurn0ewgjdsh-1.csv,rera/tables/sfjkdghryttihrwughdk-TG-RERA-54670erogjfiodgurn0ewgjdsh-1.csv,3,4,Sr.No; Subject; Date; View Document,0.6
+Govt websites,rera,Scraped table,vbdjksfhbghg-TG-RERA-35690745iynbwir-1.csv,rera/tables/vbdjksfhbghg-TG-RERA-35690745iynbwir-1.csv,156,4,Sr.No; Subject; Date; View Document,23.1
+Govt websites,cgwb,Dataset,documents.csv,cgwb/documents.csv,33,6,page_title; page_url; link_text; document_url; type; saved_as,9.3
+Govt websites,cgwb,Dataset,download_failures.csv,cgwb/download_failures.csv,0,2,document_url; reason,0.0
+Govt websites,cgwb,Dataset,pages.csv,cgwb/pages.csv,5,5,title; url; tables; documents; text,33.6
+Govt websites,cgwb,Dataset,skipped_pages.csv,cgwb/skipped_pages.csv,41,2,url; reason,3.3
+Govt websites,cgwb,Dataset,tables.csv,cgwb/tables.csv,7,4,page_title; page_url; table_file; rows,0.8
+Govt websites,cgwb,Scraped table,en-contact-us-1.csv,cgwb/tables/en-contact-us-1.csv,9,6,Name; Designation; Address; Telephone (Office); Fax; E-mail,1.7
+Govt websites,cgwb,Scraped table,en-contact-us-2.csv,cgwb/tables/en-contact-us-2.csv,19,6,Name; Designation; Address; Telephone (Office); Fax; E-mail,4.6
+Govt websites,cgwb,Scraped table,en-contact-us-3.csv,cgwb/tables/en-contact-us-3.csv,1,6,Name; Designation; Address; Telephone (Office); Fax; E-mail,0.4
+Govt websites,cgwb,Scraped table,en-contact-us-4.csv,cgwb/tables/en-contact-us-4.csv,10,6,Name; Designation; Address; Telephone (Office); Fax; E-mail,2.3
+Govt websites,cgwb,Scraped table,en-contact-us-5.csv,cgwb/tables/en-contact-us-5.csv,17,6,Name; Designation; Address; Telephone (Office); Fax; E-mail,2.6
+Govt websites,cgwb,Scraped table,en-country-wide-locations-cgwb-offices-1.csv,cgwb/tables/en-country-wide-locations-cgwb-offices-1.csv,69,4,Sl No.; Name of Office; Location; Jurisdiction,3.5
+Govt websites,cgwb,Scraped table,en-who-s-who-1.csv,cgwb/tables/en-who-s-who-1.csv,7,6,Photograph; Name; Designation; Office Address; Phone & Fax; Email,1.4
+Govt websites,meeseva_faq,Dataset,documents.csv,meeseva_faq/documents.csv,0,6,page_title; page_url; link_text; document_url; type; saved_as,0.1
+Govt websites,meeseva_faq,Dataset,pages.csv,meeseva_faq/pages.csv,1,5,title; url; tables; documents; text,92.8
+Govt websites,meeseva_faq,Dataset,skipped_pages.csv,meeseva_faq/skipped_pages.csv,1,2,url; reason,0.1
+Govt websites,meeseva_faq,Dataset,tables.csv,meeseva_faq/tables.csv,0,4,page_title; page_url; table_file; rows,0.0
+HMDA,Registers,Dataset,building_permissions.csv,building_permissions.csv,4849,9,File_no; Subject; Name_Address; Released on; Type Of Permission; Proceedings; Plan; Proceedings link; Plan link,864.8
+HMDA,Registers,Dataset,extended_area_building_permissions.csv,extended_area_building_permissions.csv,21,5,File_no; Subject; Name_Address; Released on; Type Of Permission,6.5
+HMDA,Registers,Dataset,extended_area_layouts.csv,extended_area_layouts.csv,298,7,File_no; Village Synos; name; Extent; Draft_layout_issued; layout_issued; Remarks,91.1
+HMDA,Registers,Dataset,extended_area_nocs.csv,extended_area_nocs.csv,24,5,File_no; Subject; Name; Released On; Year,7.1
+HMDA,Registers,Dataset,hada_building_permissions.csv,hada_building_permissions.csv,3,5,File_no; Subject; Name_Address; Released on; Type Of Permission,1.1
+HMDA,Registers,Dataset,hada_layouts.csv,hada_layouts.csv,19,7,File_no; Village Synos; name; Extent; Draft_layout_issued; layout_issued; Remarks,10.1
+HMDA,Registers,Dataset,layout_permissions.csv,layout_permissions.csv,1943,13,S.No; File_no; Village Synos; name; Extent; Draft_layout_issued; layout_issued; Remarks; Site Inspection Report; Proceedings; Plan; Proceedings link; Plan link,692.2
+HMDA,Registers,Dataset,municipal.csv,municipal.csv,322,6,File_no; survyno; Villname; Changeproposed; Extent; Memo_Go_Issued,59.7
+HMDA,Registers,Dataset,nocs.csv,nocs.csv,100,5,File_no; Area; Permissionof; Remarks; Year,17.2
+HMDA,Registers,Dataset,single_window.csv,single_window.csv,254,5,File_no; SurveyNo; Name_Address; Released on; Type Of Permission,82.0
+HMDA,PDF index,Dataset,not_available.csv,pdfs/not_available.csv,0,2,report; file_url,0.0
+HMDA,Website,Dataset,documents.csv,site/documents.csv,1180,6,page_title; page_url; link_text; document_url; type; saved_as,296.1
+HMDA,Website,Dataset,download_failures.csv,site/download_failures.csv,33,2,file_url; reason,3.1
+HMDA,Website,Dataset,media.csv,site/media.csv,1759,6,id; title; mime_type; uploaded; file_url; saved_as,383.7
+HMDA,Website,Dataset,pages.csv,site/pages.csv,187,7,id; title; url; last_modified; tables; documents; text,353.2
+HMDA,Website,Dataset,tables.csv,site/tables.csv,106,4,page_title; page_url; table_file; rows,11.7
+HMDA,Website,Scraped table,administration-department-1.csv,site/tables/administration-department-1.csv,14,5,Sl.No.; Units/Section; Name & Designation of PIO (Sri/Smt); Name & Designation of APIO (Sri/Smt); Name & Designation of 1st Appellate Authority (Sri/Smt),1.5
+HMDA,Website,Scraped table,auctions-archives-1.csv,site/tables/auctions-archives-1.csv,11,3,Sl.NO; DESCRIPTION; FILES,1.2
+HMDA,Website,Scraped table,auctions-archives-2.csv,site/tables/auctions-archives-2.csv,18,3,Sl.NO; DESCRIPTION; FILES,2.4
+HMDA,Website,Scraped table,auctions-archives-3.csv,site/tables/auctions-archives-3.csv,38,9,Sl.No; Name of the Nursery; District; Mandal; Bag wise Details; Grand Total; Phone Numbers; Location (click on Location); GMaps Location,10.2
+HMDA,Website,Scraped table,auctions-archives-bahadurpally-1.csv,site/tables/auctions-archives-bahadurpally-1.csv,1,2,Date: 14.03.2022; Date: 15.03.2022,0.2
+HMDA,Website,Scraped table,auctions-archives-bahadurpally-2.csv,site/tables/auctions-archives-bahadurpally-2.csv,2,3,Sl No; Amount; Period,0.1
+HMDA,Website,Scraped table,auctions-archives-bahadurpally-3.csv,site/tables/auctions-archives-bahadurpally-3.csv,2,5,S.No; Installment; Amount Payable; Payable by; If not paid within stipulated time (mentioned in col. no 4),0.4
+HMDA,Website,Scraped table,auctions-archives-bandlaguda-1.csv,site/tables/auctions-archives-bandlaguda-1.csv,17,3,S.No; Item of Work; Details,1.8
+HMDA,Website,Scraped table,auctions-archives-jogulamba-gadwal-1.csv,site/tables/auctions-archives-jogulamba-gadwal-1.csv,4,3,S.No; Item of Work; Details,0.3
+HMDA,Website,Scraped table,auctions-archives-jogulamba-gadwal-2.csv,site/tables/auctions-archives-jogulamba-gadwal-2.csv,2,4,Sl.No.; Name of the person; Designation; Phone No.,0.2
+HMDA,Website,Scraped table,auctions-archives-khammam-1.csv,site/tables/auctions-archives-khammam-1.csv,17,3,S.No; Item of Work; Details,1.7
+HMDA,Website,Scraped table,auctions-archives-khammam-2.csv,site/tables/auctions-archives-khammam-2.csv,3,5,S.No; Installment; Amount Payable; Payable by; If not paid within stipulated time (mentioned in col. no 4),0.6
+HMDA,Website,Scraped table,auctions-archives-mahabubnagar-1.csv,site/tables/auctions-archives-mahabubnagar-1.csv,4,3,S.No; Item of Work; Details,0.2
+HMDA,Website,Scraped table,auctions-archives-mahabubnagar-2.csv,site/tables/auctions-archives-mahabubnagar-2.csv,8,4,; Name of the person; Phone No.; Email,0.4
+HMDA,Website,Scraped table,auctions-archives-nalgonda-1.csv,site/tables/auctions-archives-nalgonda-1.csv,5,3,S.No; Item of Work; Details,0.3
+HMDA,Website,Scraped table,auctions-archives-nalgonda-2.csv,site/tables/auctions-archives-nalgonda-2.csv,2,4,#; Name of the person; Phone No; Email,0.2
+HMDA,Website,Scraped table,auctions-archives-thorrur-1.csv,site/tables/auctions-archives-thorrur-1.csv,17,3,S.No; Item of Work; Details,2.1
+HMDA,Website,Scraped table,auctions-archives-thorrur-2.csv,site/tables/auctions-archives-thorrur-2.csv,2,5,S.No; Installment; Amount Payable; Payable by; If not paid within stipulated time (mentioned in col. no 4),0.4
+HMDA,Website,Scraped table,bpp-online-booking-1.csv,site/tables/bpp-online-booking-1.csv,4,1,Charges for Film Shooting,0.4
+HMDA,Website,Scraped table,bridges-1.csv,site/tables/bridges-1.csv,3,8,Sl.No.; Name of the Bridge; Connectivity; Name of the Bridge; Width of the Bridge; Project Cost in Crores; Expenditure incurred; Completed & Inaugurated,0.7
+HMDA,Website,Scraped table,buddha-purnima-project-1.csv,site/tables/buddha-purnima-project-1.csv,1,5,Sl.No.; Units/Section; Name & Designation of PIO (Sri/Smt); Name & Designation of APIO (Sri/Smt); Name & Designation of 1st Appellate Authority (Sri/Smt),0.3
+HMDA,Website,Scraped table,careers-1.csv,site/tables/careers-1.csv,3,4,Sl. No; Name of Post; Required Qualification; ,0.9
+HMDA,Website,Scraped table,commercial-complexes-1.csv,site/tables/commercial-complexes-1.csv,6,7,Sl.No.; Name of the Complex; Area in Acres; Total Built up area; No. of Floors; Year of Completion; Project Cost in Crores,0.7
+HMDA,Website,Scraped table,commercial-maitrivanam-1.csv,site/tables/commercial-maitrivanam-1.csv,7,3,; ; Rates fixed (2024),0.3
+HMDA,Website,Scraped table,commercial-maitrivanam-2.csv,site/tables/commercial-maitrivanam-2.csv,5,1,Conditions,0.2
+HMDA,Website,Scraped table,commercial-maitrivihar-1.csv,site/tables/commercial-maitrivihar-1.csv,5,3,; ; Rates fixed,0.2
+HMDA,Website,Scraped table,commercial-maitrivihar-2.csv,site/tables/commercial-maitrivihar-2.csv,7,1,Area Specifications,0.3
+HMDA,Website,Scraped table,commercial-maitrivihar-3.csv,site/tables/commercial-maitrivihar-3.csv,5,1,Conditions,0.2
+HMDA,Website,Scraped table,commercial-swarna-jayanthi-1.csv,site/tables/commercial-swarna-jayanthi-1.csv,9,3,; ; Rates fixed (2024),0.4
+HMDA,Website,Scraped table,commercial-swarna-jayanthi-2.csv,site/tables/commercial-swarna-jayanthi-2.csv,5,1,Conditions,0.2
+HMDA,Website,Scraped table,commercial-tarnaka-1.csv,site/tables/commercial-tarnaka-1.csv,1,3,; Existing Rents; New Rents,0.1
+HMDA,Website,Scraped table,commercial-tarnaka-2.csv,site/tables/commercial-tarnaka-2.csv,4,1,Area Specifications,0.2
+HMDA,Website,Scraped table,commercial-tarnaka-3.csv,site/tables/commercial-tarnaka-3.csv,5,1,Conditions,0.2
+HMDA,Website,Scraped table,constitution-of-the-hyderabad-metropolitan-development-authority-1.csv,site/tables/constitution-of-the-hyderabad-metropolitan-development-authority-1.csv,19,3,"1.; Chief Minister, Telangana; Chairman",1.3
+HMDA,Website,Scraped table,contact-1.csv,site/tables/contact-1.csv,5,6,S.N; HOD/Officers; Department; Phone no; Fax no; e-Mail,0.5
+HMDA,Website,Scraped table,contact-2.csv,site/tables/contact-2.csv,4,6,S.N; HOD/Officers; Department; Phone no; Fax no; e-Mail,0.4
+HMDA,Website,Scraped table,contact-3.csv,site/tables/contact-3.csv,13,3,#; Designation; Twitter Id,0.6
+HMDA,Website,Scraped table,developdept-12-1.csv,site/tables/developdept-12-1.csv,17,2,"1; 10,00,00 sft(built-up) Passenger Terminal",0.9
+HMDA,Website,Scraped table,developdept-12-2.csv,site/tables/developdept-12-2.csv,13,4,S.No; Project Component; Batasingaram; Mangalapally,0.7
+HMDA,Website,Scraped table,developdept9-1.csv,site/tables/developdept9-1.csv,15,7,S.No; System; Units; Upto 2011; 2021-2031; 2031-2041; Total,1.0
+HMDA,Website,Scraped table,enforcement-cell-1.csv,site/tables/enforcement-cell-1.csv,1,5,Sl.No.; Units/Section; Name & Designation of PIO (Sri/Smt); Name & Designation of APIO (Sri/Smt); Name & Designation of 1st Appellate Authority (Sri/Smt),0.3
+HMDA,Website,Scraped table,engineering-department-1.csv,site/tables/engineering-department-1.csv,1,5,Sl.No.; Units/Section; Name & Designation of PIO (Sri/Smt); Name & Designation of APIO (Sri/Smt); Name & Designation of 1st Appellate Authority (Sri/Smt),0.3
+HMDA,Website,Scraped table,engineering-urban-forestry-1.csv,site/tables/engineering-urban-forestry-1.csv,1,5,Sl.No.; Units/Section; Name & Designation of PIO (Sri/Smt); Name & Designation of APIO (Sri/Smt); Name & Designation of 1st Appellate Authority (Sri/Smt),0.3
+HMDA,Website,Scraped table,executive-committee-1.csv,site/tables/executive-committee-1.csv,25,3,Sl. No.; Member; Status,1.5
+HMDA,Website,Scraped table,flyovers-1.csv,site/tables/flyovers-1.csv,10,8,Sl.No.; Name of the Flyover; Connectivity; Length of the Flyover; Width of the Flyover; Project Cost in Crores; Expenditure incurred; Completed & Inaugurated,1.2
+HMDA,Website,Scraped table,gos-acts-1.csv,site/tables/gos-acts-1.csv,11,5,Type; Department; Number; Date; Download,1.7
+HMDA,Website,Scraped table,gos-acts-2.csv,site/tables/gos-acts-2.csv,15,5,Type; Department; Number; Date; Download,2.2
+HMDA,Website,Scraped table,gos-acts-3.csv,site/tables/gos-acts-3.csv,3,5,Type; Department; Number; Date; Download,0.4
+HMDA,Website,Scraped table,gos-acts-4.csv,site/tables/gos-acts-4.csv,2,5,Type; Department; Number; Date; Download,0.4
+HMDA,Website,Scraped table,gos-acts-5.csv,site/tables/gos-acts-5.csv,3,5,Type; Department; Number; Date; Download,0.5
+HMDA,Website,Scraped table,gos-acts-6.csv,site/tables/gos-acts-6.csv,1,5,Type; Department; Number; Date; Download,0.2
+HMDA,Website,Scraped table,gos-acts-7.csv,site/tables/gos-acts-7.csv,2,5,Type; Department; Number; Date; Download,0.3
+HMDA,Website,Scraped table,gos-acts-8.csv,site/tables/gos-acts-8.csv,7,5,Type; Department; Number; Date; Download,1.1
+HMDA,Website,Scraped table,gos-acts-9.csv,site/tables/gos-acts-9.csv,16,5,Type; Department; Number; Date; Download,2.6
+HMDA,Website,Scraped table,green-hyderabad-environment-programme-2002-2006-1.csv,site/tables/green-hyderabad-environment-programme-2002-2006-1.csv,7,4,Sl. No; Components; Project Target; Achievement,0.6
+HMDA,Website,Scraped table,green-hyderabad-environment-programme-2002-2006-2.csv,site/tables/green-hyderabad-environment-programme-2002-2006-2.csv,7,2,Programme period; 2002-2006 (December),0.4
+HMDA,Website,Scraped table,greenery-development-in-industrial-areas-1.csv,site/tables/greenery-development-in-industrial-areas-1.csv,5,4,S.No.; Name of the Industrial area; Area in Ha; No. of Plants,0.3
+HMDA,Website,Scraped table,greenery-development-in-industrial-areas-2.csv,site/tables/greenery-development-in-industrial-areas-2.csv,7,4,S.No.; Location; Area in Ha; No. of Plants,0.4
+HMDA,Website,Scraped table,heritage-1.csv,site/tables/heritage-1.csv,12,6,Sl.NO; NAME OF THE STEP WELL; NATURE OF WORK; RESTORATION MOTH & YEAR; BEFORE PICTURES; AFTER PICTURES,3.1
+HMDA,Website,Scraped table,hmda-dev-layout-plots-1.csv,site/tables/hmda-dev-layout-plots-1.csv,26,7,Sl.No.; Name of the Complex; Layout Extent in Acres; Total No. of Plots/Houses; Total No. of Plots/Houses; Left over Plots/Houses; Remarks,1.4
+HMDA,Website,Scraped table,hmda-developed-layout-plots-1.csv,site/tables/hmda-developed-layout-plots-1.csv,26,7,Sl.No.; Name of the Complex; Layout Extent in Acres; Total No. of Plots/Houses; Sold out Plots/Houses; Left over Plots/Houses; Remarks,1.4
+HMDA,Website,Scraped table,huda-developed-layouts-1.csv,site/tables/huda-developed-layouts-1.csv,10,11,S. No; File number; Survey NO/Address; District; Mandal; Village; Extent; Phases; No. of Plots; Name; Layouts,2.2
+HMDA,Website,Scraped table,humta-core-committee-1.csv,site/tables/humta-core-committee-1.csv,16,3,"I.; Principal Secretary to Govt., M.A & U.D. Department; – Chairman",1.4
+HMDA,Website,Scraped table,humta-main-committee-1.csv,site/tables/humta-main-committee-1.csv,15,3,I.; Chief Secretary to Govt.; – Chairman,1.1
+HMDA,Website,Scraped table,ibp-charge-apply-to-above-4000-1.csv,site/tables/ibp-charge-apply-to-above-4000-1.csv,11,3,Sl.no; Charges To Be Levied; Orders No,3.0
+HMDA,Website,Scraped table,ibp-charges-below-4000-sqmts-1.csv,site/tables/ibp-charges-below-4000-sqmts-1.csv,10,3,Sl.no; Charges To Be Levied; Orders No,2.9
+HMDA,Website,Scraped table,ibp-charges-for-unapplayouts-1.csv,site/tables/ibp-charges-for-unapplayouts-1.csv,11,3,Sl.no; Charges To Be Levied; Orders No,3.2
+HMDA,Website,Scraped table,ibpc-approved-layouts-above-4000-1.csv,site/tables/ibpc-approved-layouts-above-4000-1.csv,11,3,SL.NO; CHARGES TO BE LEVIED; ORDERS NO,3.0
+HMDA,Website,Scraped table,ibpc-approved-layouts-below-4000sqmts-1.csv,site/tables/ibpc-approved-layouts-below-4000sqmts-1.csv,10,3,SL.NO; CHARGES TO BE LEVIED; ORDERS NO,2.9
+HMDA,Website,Scraped table,ibpc-un-approved-layouts-below-4000sqmts-1.csv,site/tables/ibpc-un-approved-layouts-below-4000sqmts-1.csv,11,3,SL.NO; CHARGES TO BE LEVIED; ORDERS NO,3.2
+HMDA,Website,Scraped table,lake-protection-committee-1.csv,site/tables/lake-protection-committee-1.csv,17,2,"1; The Metropolitan Commissioner, HMDA (Chairman)",0.8
+HMDA,Website,Scraped table,lrs-village-wise-1.csv,site/tables/lrs-village-wise-1.csv,188,2,SNO; Village Name,19.5
+HMDA,Website,Scraped table,master-planning-2031-1.csv,site/tables/master-planning-2031-1.csv,30,3,Sl.NO; DISTRICT; MASTER PLAN,3.2
+HMDA,Website,Scraped table,masterplan-huda-1.csv,site/tables/masterplan-huda-1.csv,31,1,ZONAL WISE LIST,3.8
+HMDA,Website,Scraped table,medak-list-1.csv,site/tables/medak-list-1.csv,63,9,Sl.No.; Name of the District; Name of the Mandal; Name of the Village; Sy.No. & Sub division No. (if any); Extent; Name of the Layout; Name of the Owner / Developer; Remarks for Prohibition,5.6
+HMDA,Website,Scraped table,medak-list-2-1.csv,site/tables/medak-list-2-1.csv,63,9,Sl.No.; Name of the District; Name of the Mandal; Name of the Village; Sy.No. & Sub division No. (if any); Extent; Name of the Layout; Name of the Owner / Developer; Remarks for Prohibition,5.6
+HMDA,Website,Scraped table,minutes-of-meetings-1.csv,site/tables/minutes-of-meetings-1.csv,19,2,1st Meeting; [Download] [https://www.hmda.gov.in/wp-content/uploads/2020/07/1ST-minutes.pdf],2.2
+HMDA,Website,Scraped table,notices-1.csv,site/tables/notices-1.csv,1,3,Date; Subject; Description,0.3
+HMDA,Website,Scraped table,nurseries-1.csv,site/tables/nurseries-1.csv,39,1,Statement showing details of nursery wise bag wise information of Urban Forestry HMDA Nurseries during 2023-24,4.1
+HMDA,Website,Scraped table,nurseries-2-1.csv,site/tables/nurseries-2-1.csv,10,2,S.No.; Location,0.3
+HMDA,Website,Scraped table,officers-list-1.csv,site/tables/officers-list-1.csv,228,5,SL.NO; NAME OF THE OFFICER; DESIGNATION; CONTACT NOS.; E-MAIL IDS.,13.5
+HMDA,Website,Scraped table,one-day-one-two-lakh-plantation-1.csv,site/tables/one-day-one-two-lakh-plantation-1.csv,12,3,Year; Date; Main site & others,0.8
+HMDA,Website,Scraped table,outer-ring-road-project-1.csv,site/tables/outer-ring-road-project-1.csv,3,5,Sl.No.; Units/Section; Name & Designation of PIO (Sri/Smt); Name & Designation of APIO (Sri/Smt); Name & Designation of 1st Appellate Authority (Sri/Smt),0.4
+HMDA,Website,Scraped table,planning-department-1.csv,site/tables/planning-department-1.csv,8,5,Sl.No.; Units/Section; Name & Designation of PIO (Sri/Smt); Name & Designation of APIO (Sri/Smt); Name & Designation of 1st Appellate Authority (Sri/Smt),0.9
+HMDA,Website,Scraped table,plots-1.csv,site/tables/plots-1.csv,1,9,Sl No; Plot/Block No; Category; Dimension in Mts North; Dimension in Mts South; Dimension in Mts East; Dimension in Mts West; Extent in sq.Mts; Extent in Sq.Yds,0.2
+HMDA,Website,Scraped table,plots-2.csv,site/tables/plots-2.csv,2,9,1; 588/2; I; 19.85; 15.00; 23.62; 23.62; 411.57; 492.24,0.2
+HMDA,Website,Scraped table,plots-3.csv,site/tables/plots-3.csv,0,9,4; C4; C(a); ; 116.3; 71.81; 78.85; 2391.00; 2859.64,0.1
+HMDA,Website,Scraped table,plots-4.csv,site/tables/plots-4.csv,2,9,1; 588/2; I; 19.85; 15.00; 23.62; 23.62; 411.57; 492.24,0.2
+HMDA,Website,Scraped table,plots-5.csv,site/tables/plots-5.csv,2,9,1; 588/2; I; 19.85; 15.00; 23.62; 23.62; 411.57; 492.24,0.2
+HMDA,Website,Scraped table,proposed-alignment-of-100m-wide-regional-ring-road-1.csv,site/tables/proposed-alignment-of-100m-wide-regional-ring-road-1.csv,3,3,Sl.NO; DESCRIPTION; DOCUMENT,0.4
+HMDA,Website,Scraped table,public-information-officers-1.csv,site/tables/public-information-officers-1.csv,16,5,SL. No.; Unit /Section; Name & Designation of PIO Sri / Smt.; Name & Designation of APIO Sri / Smt.; Name & Designation of 1 st Appellate Authority Sri,1.4
+HMDA,Website,Scraped table,public-information-officers-2.csv,site/tables/public-information-officers-2.csv,21,5,Sl. No.; Unit /Section; Name & Designation of PIO Sri / Smt.; Name & Designation of APIO Sri / Smt.; Name & Designation of 1 st Appellate Authority Sri,1.7
+HMDA,Website,Scraped table,public-information-officers-3.csv,site/tables/public-information-officers-3.csv,8,5,Sl. No; Unit /Section; Name & Designation of PIO Sri / Smt.; Name & Designation of APIO Sri / Smt.; Name & Designation of 1 st Appellate Authority Sri,1.0
+HMDA,Website,Scraped table,public-information-officers-4.csv,site/tables/public-information-officers-4.csv,2,5,Sl. No; Unit / Section; Name & Designation of PIO Sri / Smt.; Name & Designation of APIO Sri / Smt.; Name & Designation of 1 st Appellate Authority Sri,0.4
+HMDA,Website,Scraped table,public-information-officers-5.csv,site/tables/public-information-officers-5.csv,8,5,Sl. No; Unit / Section; Name & Designation of PIO Sri / Smt.; Name & Designation of APIO Sri / Smt.; Name & Designation of 1 st Appellate Authority Sri,0.8
+HMDA,Website,Scraped table,public-information-officers-6.csv,site/tables/public-information-officers-6.csv,1,5,Sl. No; Unit / Section; Name & Designation of PIO Sri / Smt.; Name & Designation of APIO Sri / Smt.; Name & Designation of 1 st Appellate Authority Sri,0.3
+HMDA,Website,Scraped table,public-information-officers-7.csv,site/tables/public-information-officers-7.csv,3,5,Sl. No; Unit / Section; Name & Designation of PIO Sri / Smt.; Name & Designation of APIO Sri / Smt.; Name & Designation of 1 st Appellate Authority Sri,0.5
+HMDA,Website,Scraped table,ready-to-occupy-1.csv,site/tables/ready-to-occupy-1.csv,5,2,Date of Notification; 11/5/2022,0.4
+HMDA,Website,Scraped table,revised-development-plan-1.csv,site/tables/revised-development-plan-1.csv,9,2,; Circle wise Maps/PDFs Download,1.3
+HMDA,Website,Scraped table,road-development-plan-1.csv,site/tables/road-development-plan-1.csv,2,6,Sl. No.; Subject; Paper Notification; Alignment Plan; Road Development Plans; GO,0.7
+HMDA,Website,Scraped table,road-development-plan-2.csv,site/tables/road-development-plan-2.csv,2,2,Name; Download,0.2
+HMDA,Website,Scraped table,state-web-directory-1.csv,site/tables/state-web-directory-1.csv,38,2,TITLE; LINKS,4.0
+HMDA,Website,Scraped table,time-lines-1.csv,site/tables/time-lines-1.csv,4,3,Sl.No.; Feature; Time Lines,0.2
+HMDA,Website,Scraped table,time-lines-2.csv,site/tables/time-lines-2.csv,7,3,Sl.No.; Description; TIME LINES(IN DAYS) AS RECOMMENDED BY ASCI,0.5
+HMDA,Website,Scraped table,time-lines-for-processing-of-dpms-applications-1.csv,site/tables/time-lines-for-processing-of-dpms-applications-1.csv,4,3,Sl.NO; Feature; Time Lines,0.2
+HMDA,Website,Scraped table,time-lines-for-processing-of-dpms-applications-2.csv,site/tables/time-lines-for-processing-of-dpms-applications-2.csv,8,3,Sl.NO; Description; TIME LINES(IN DAYS) AS RECOMMENDED BY ASCI,0.5
+TGRAC GIS,Catalogue,Dataset,catalogue.csv,catalogue.csv,2044,12,folder; service; service_type; layer_id; layer_name; layer_type; geometry; fields; records; status; url; personal_columns,471.1
+TGRAC GIS,Catalogue,Dataset,catalogue_TGIIC_Folder.csv,catalogue_TGIIC_Folder.csv,45,11,folder; service; service_type; layer_id; layer_name; layer_type; geometry; fields; records; status; url,9.9
+TGRAC GIS,TGIIC,Dataset,1_State_Boundary.csv,data/TGIIC_Folder/BaseLayers_DMV_New/1_State_Boundary.csv,1,6,Shape_Length; Shape_Area; OBJECTID_1; OBJECTID; State; Shape_Leng,0.1
+TGRAC GIS,TGIIC,Dataset,2_District_Boundary.csv,data/TGIIC_Folder/BaseLayers_DMV_New/2_District_Boundary.csv,33,19,OBJECTID; Area; Shape_Leng; No_HH; TOT_P; TOT_M; TOT_F; P_06; M_06; F_06; P_SC; M_SC; F_SC; P_ST; M_ST; F_ST; Dist_Name; Shape_Length; Shape_Area,6.6
+TGRAC GIS,TGIIC,Dataset,3_Mandal_Boundary.csv,data/TGIIC_Folder/BaseLayers_DMV_New/3_Mandal_Boundary.csv,589,22,Area; S_No; Mandal_Nam; No_HH; TOT_P; TOT_M; TOT_F; P_06; M_06; F_06; P_SC; M_SC; F_SC; F_SC2; P_ST; M_ST; F_ST; OBJECTID; Shape_Length; Shape_Area; Shape_Leng; Dist_Name,116.0
+TGRAC GIS,TGIIC,Dataset,4_Village_Boundary.csv,data/TGIIC_Folder/BaseLayers_DMV_New/4_Village_Boundary.csv,10932,56,DMV_Code; Shape_Area; District; Subdistt; DIV_CODE; DIV_NAME; TRU; No_HH; TOT_P; TOT_M; TOT_F; P_06; M_06; F_06; P_SC; M_SC; F_SC; P_ST; M_ST; F_ST; Remarks; Level1; Munci_Ward; S_No; H_Code; H_Name; GP_Code; Total_GP; GP_REMARKS; vlgcd11; gpcode; gp_name; ipcode; ipname; dtcensus11; stcensus; iptyp,5256.4
+TGRAC GIS,TGIIC,Dataset,10_District_Village_Road_Network.csv,data/TGIIC_Folder/BaseLayers/10_District_Village_Road_Network.csv,71826,14,OBJECTID_1; RD_TYPE; RD_SUB_TYP; PR_ROAD_ID; LENGTH; ROAD_NAME; REMARKS; DISTRICT; MANDAL; ASSEMBLY; RD_CODE; NH_NO; OBJECTID; Shape_Length,9220.3
+TGRAC GIS,TGIIC,Dataset,11_Fire_Stations.csv,data/TGIIC_Folder/BaseLayers/11_Fire_Stations.csv,438,11,DMNAME; dist; sub_distt; mand; dmcode; DNAME; FS_NAME; REMARKS; OBJECTID; longitude; latitude,50.2
+TGRAC GIS,TGIIC,Dataset,12_Airports.csv,data/TGIIC_Folder/BaseLayers/12_Airports.csv,10,8,Id; DNAME; MNAME; PORT_TYPE; PORT_NAME; OBJECTID; longitude; latitude,1.1
+TGRAC GIS,TGIIC,Dataset,14_Lakes_Ponds_Tanks.csv,data/TGIIC_Folder/BaseLayers/14_Lakes_Ponds_Tanks.csv,36580,10,OBJECTID; Descr_1; Descr_2; Descr_3; PI_CODE; LU_Code; Shape_Leng; Shape_Area; OBJECTID_1; Shape_Length,5142.3
+TGRAC GIS,TGIIC,Dataset,15_Rivers.csv,data/TGIIC_Folder/BaseLayers/15_Rivers.csv,1891,10,OBJECTID; Descr_1; Descr_2; Descr_3; PI_CODE; LU_Code; Shape_Leng; Shape_Area; OBJECTID_1; Shape_Length,274.2
+TGRAC GIS,TGIIC,Dataset,16_Reservoirs.csv,data/TGIIC_Folder/BaseLayers/16_Reservoirs.csv,57,9,Id; TYPE; Name; Category; res; OBJECTID; Shape_Length; Shape_Area; R_Type,6.3
+TGRAC GIS,TGIIC,Dataset,18_Sub_Station.csv,data/TGIIC_Folder/BaseLayers/18_Sub_Station.csv,31,38,ADDRESS; ASSETCODE; CAPACITY; COMMENTS; COMMISSION; CREATIONUS; DATECREATE; DATEMODIFI; FACILITYID; EXISTINGAS; JOBID; LASTUSER; LOCATIONCO; MANUFACTUR; MAXIMUMDEM; MAXNOOFFEE; NEARESTPOL; NOOFPOWERT; OPERATINGV; PAINTINGDA; STATIONNUM; STATUS; SUBSTATION; SUBTYPECD; SURVEYDATE; SYMBOLROTA; TOWN; ZO,10.5
+TGRAC GIS,TGIIC,Dataset,19_Transformers.csv,data/TGIIC_Folder/BaseLayers/19_Transformers.csv,3728,77,ANCILLARYR; ASSETCODE; CAPACITY; COILTYPE; COMMENTS; COOLINGTYP; COPPERLOSS; CORETYPE; CREATIONUS; DATECREATE; DATEMODIFI; DTR_STRUC_; ELECTRICTR; ENABLED; FACILITYID; FEEDERID; FEEDERID2; FEEDERINFO; HTCONFIGUR; HTPROTECTI; HTRATEDVOL; IMPEDENCE; INSIDE_SUB; INSTALLATI; IRONLOSS; JOBID; LABELTEXT; ,2048.2
+TGRAC GIS,TGIIC,Dataset,1_State_Boundary.csv,data/TGIIC_Folder/BaseLayers/1_State_Boundary.csv,1,6,Shape_Length; Shape_Area; OBJECTID_1; OBJECTID; State; Shape_Leng,0.1
+TGRAC GIS,TGIIC,Dataset,20_Poles.csv,data/TGIIC_Folder/BaseLayers/20_Poles.csv,78757,43,ASSETCODE; CLASS; COMMENTS; CONFIGURAT; CREATIONUS; CUTPOINT; DATECREATE; DATEMODIFI; FACILITYID; HEIGHT; JOBID; MATERIAL; LASTUSER; NOOFCIRCUI; STATUS; SUBTYPECD; SURVEYDATE; SYMBOLROTA; TOWN; TYPEOFSUPP; RELEASEDDA; POLE_PAINT; NOOFWIRES; LOCATIONCO; GROUNDED; FOUNDATION; TYPEOFCROS; POLECOUNT; ST,23872.7
+TGRAC GIS,TGIIC,Dataset,2_District_Boundary.csv,data/TGIIC_Folder/BaseLayers/2_District_Boundary.csv,33,19,OBJECTID; Shape_Length; Shape_Area; Area; Shape_Leng; No_HH; TOT_P; TOT_M; TOT_F; P_06; M_06; F_06; P_SC; M_SC; F_SC; P_ST; M_ST; F_ST; Dist_Name,6.6
+TGRAC GIS,TGIIC,Dataset,3_Mandal_Boundary.csv,data/TGIIC_Folder/BaseLayers/3_Mandal_Boundary.csv,589,22,OBJECTID; Area; S_No; Mandal_Nam; No_HH; TOT_P; TOT_M; TOT_F; P_06; M_06; F_06; P_SC; M_SC; F_SC; F_SC2; P_ST; M_ST; F_ST; Shape_Length; Shape_Area; Shape_Leng; Dist_Name,116.0
+TGRAC GIS,TGIIC,Dataset,4_Village_Boundary.csv,data/TGIIC_Folder/BaseLayers/4_Village_Boundary.csv,10932,56,DMV_Code; District; Subdistt; DIV_CODE; DIV_NAME; TRU; No_HH; TOT_P; TOT_M; TOT_F; P_06; M_06; F_06; P_SC; M_SC; F_SC; P_ST; M_ST; F_ST; Remarks; Level1; Munci_Ward; S_No; H_Code; H_Name; GP_Code; Total_GP; GP_REMARKS; vlgcd11; gpcode; gp_name; ipcode; ipname; dtcensus11; stcensus; iptype; stname; v,5256.4
+TGRAC GIS,TGIIC,Dataset,5_Mandal_HQ.csv,data/TGIIC_Folder/BaseLayers/5_Mandal_HQ.csv,444,76,DMNAME; dist; sub_distt; mand; dcode91; mcode91; dmcode; DNAME; name; DMNAME_1; DNAME1; no_hh; tot_p; tot_m; tot_f; p_06; m_06; f_06; p_sc; per_sc_t; m_sc; per_sc_m; f_sc; per_sc_f; p_st; per_st_t; m_st; per_m_st; f_st; per_st_f; p_lit; m_lit; f_lit; p_ill; m_ill; f_ill; tot_work_p; tot_work_m; tot_,246.0
+TGRAC GIS,TGIIC,Dataset,7_National_State_Highway.csv,data/TGIIC_Folder/BaseLayers/7_National_State_Highway.csv,133,14,OBJECTID_1; RD_TYPE; RD_SUB_TYP; PR_ROAD_ID; LENGTH; ROAD_NAME; REMARKS; DISTRICT; MANDAL; ASSEMBLY; RD_CODE; NH_NO; OBJECTID; Shape_Length,17.8
+TGRAC GIS,TGIIC,Dataset,8_Rail_Network.csv,data/TGIIC_Folder/BaseLayers/8_Rail_Network.csv,52,15,FNODE_; TNODE_; LPOLY_; RPOLY_; LENGTH; APRAIL_; APRAIL_ID; FNODE1; TNODE1; LPOLY1; RPOLY1; APRAIL1; APRAIL_I_1; OBJECTID; Shape_Length,4.4
+TGRAC GIS,TGIIC,Dataset,9_National_State_Highway.csv,data/TGIIC_Folder/BaseLayers/9_National_State_Highway.csv,133,14,OBJECTID_1; RD_TYPE; RD_SUB_TYP; PR_ROAD_ID; LENGTH; ROAD_NAME; REMARKS; DISTRICT; MANDAL; ASSEMBLY; RD_CODE; NH_NO; OBJECTID; Shape_Length,17.8
+TGRAC GIS,GWD,Dataset,0_GWD_WELLS.csv,data/GWD_Folder/GWD_Query/0_GWD_WELLS.csv,2923,17,FID; District; Mandal; Village; Easting; Northing; Elevation; Location; Latitude; Longitude; Well_Type; LAT1; LOG1; Well_ID; Remarks; longitude; latitude,702.4
+TGRAC GIS,GWD,Dataset,0_GWD_WELLS.csv,data/GWD_Folder/GWD_Layers/0_GWD_WELLS.csv,2923,17,District; Mandal; Village; Easting; Northing; Elevation; Location; Latitude; Longitude; Well_Type; LAT1; LOG1; Well_ID; Remarks; OBJECTID; longitude; latitude,696.5
+TGRAC GIS,GWD,Dataset,1_GWD_CONTOUR.csv,data/GWD_Folder/GWD_Layers/1_GWD_CONTOUR.csv,859,4,OBJECTID; Id; Contour; Shape_Length,31.9
+TGRAC GIS,Hydra,Dataset,0_ORR_Tanks.csv,data/Hydra_Folder/First_Window/0_ORR_Tanks.csv,1122,15,FID; Base_Syno; District; Mandal; Village; DMV_1991; WB_Name; WBCP; WBS_2023; WBS_2014; 2014_class; ID; ID_1; Classi171; Admin,193.5
+TGRAC GIS,Hydra,Dataset,1_Contonment_Area.csv,data/Hydra_Folder/Administrative_Layer/1_Contonment_Area.csv,1,6,Id; Admin; A; OBJECTID; Shape_Length; Shape_Area,0.1
+TGRAC GIS,Hydra,Dataset,2_ORR_Mandals.csv,data/Hydra_Folder/Administrative_Layer/2_ORR_Mandals.csv,46,6,MANDAL_NAM; DISTRICT_N; Shape_Leng; Shape_Area; OBJECTID; Shape_Length,4.1
+TGRAC GIS,Hydra,Dataset,3_ORR_Villages.csv,data/Hydra_Folder/Administrative_Layer/3_ORR_Villages.csv,284,15,vlgcd11; VILLAGE_NA; MANDAL_NAM; DISTRICT_N; REVENUE_NA; ASSEMBLY_N; PARLIAMENT; GP; HABITATION; STATE_NAME; DMV; Shape_Leng; Shape_Area; OBJECTID; Shape_Length,54.5
+TGRAC GIS,Hydra,Dataset,4_GHMC_BND.csv,data/Hydra_Folder/Administrative_Layer/4_GHMC_BND.csv,1,6,Id; Admin; A; OBJECTID; Shape_Length; Shape_Area,0.1
+TGRAC GIS,Hydra,Dataset,5_ORR.csv,data/Hydra_Folder/Administrative_Layer/5_ORR.csv,1,6,Id; Admin; A; OBJECTID; Shape_Length; Shape_Area,0.1
+TGRAC GIS,Hydra,Dataset,7_TS_VILLAGES_10926_FINAL.csv,data/Hydra_Folder/Administrative_Layer/7_TS_VILLAGES_10926_FINAL.csv,10926,15,vlgcd11; VILLAGE_NA; MANDAL_NAM; DISTRICT_N; REVENUE_NA; ASSEMBLY_N; PARLIAMENT; GP; HABITATION; STATE_NAME; DMV; Shape_Leng; Shape_Area; OBJECTID; Shape_Length,2140.3
+TGRAC GIS,Hydra,Dataset,8_TS_DISTRICTS_33.csv,data/Hydra_Folder/Administrative_Layer/8_TS_DISTRICTS_33.csv,33,7,Shape_Leng; STATE; DISTRICT_N; Shape_Le_1; Shape_Area; OBJECTID; Shape_Length,3.4
+TGRAC GIS,Hydra,Dataset,9_TS_MANDALS_632.csv,data/Hydra_Folder/Administrative_Layer/9_TS_MANDALS_632.csv,632,6,MANDAL_NAM; DISTRICT_N; Shape_Leng; Shape_Area; OBJECTID; Shape_Length,54.7
+TGRAC GIS,Hydra,Dataset,0_Cadastral_Parcels.csv,data/Hydra_Folder/Fourth_Window/0_Cadastral_Parcels.csv,63686,20,OBJECTID_1; OBJECTID; Feature_Co; Descriptio; Parcel_num; Remarks; V_Name; M_Name; D_Name; DMV_Code; Shape_Leng; Shape_Le_1; Shape_Area; STCode; geodb_oid; Shape_1_Le; Shape_1_Ar; TYPE; OBJECTID_12; Shape_Length,13049.9
+TGRAC GIS,Hydra,Dataset,0_ORR_Tanks.csv,data/Hydra_Folder/Second_Window/0_ORR_Tanks.csv,1192,15,FID; Base_Syno; District; Mandal; Village; DMV_1991; WB_Name; WBCP; WBS_2023; WBS_2014; 2023_class; ID; ID_1; Classi171; Admin,206.2
+TGRAC GIS,StampsAndRegistrations,Dataset,0_Circle.csv,data/StampsAndRegistrations_Folder/StampsAndRegistrations/0_Circle.csv,2,12,OBJECTID_1; OBJECTID; Shape_Leng; area_hecta; ZONE; CIR_NAME; LATITUDES; LONGITUDES; Circle_No; Circle_Nam; Shape_Length; Shape_Area,0.5
+TGRAC GIS,StampsAndRegistrations,Dataset,1_Buildings.csv,data/StampsAndRegistrations_Folder/StampsAndRegistrations/1_Buildings.csv,40589,8,OBJECTID; name; type; Polygon; Price; Zone_Name; Shape_Length; Shape_Area,3387.6
+TGRAC GIS,StampsAndRegistrations,Dataset,2_Road_Type.csv,data/StampsAndRegistrations_Folder/StampsAndRegistrations/2_Road_Type.csv,157,5,OBJECTID; Id; Road_Type; Shape_Length; Shape_Area,9.3
+TGRAC GIS,StampsAndRegistrations,Dataset,0_Circle.csv,data/StampsAndRegistrations_Folder/SRO_Query/0_Circle.csv,2,12,OBJECTID_1; OBJECTID; Shape_Leng; area_hecta; ZONE; CIR_NAME; LATITUDES; LONGITUDES; Circle_No; Circle_Nam; Shape_Length; Shape_Area,0.5
+TGRAC GIS,StampsAndRegistrations,Dataset,0_Circle.csv,data/StampsAndRegistrations_Folder/SRO/0_Circle.csv,2,12,OBJECTID_1; OBJECTID; Shape_Leng; area_hecta; ZONE; CIR_NAME; LATITUDES; LONGITUDES; Circle_No; Circle_Nam; Shape_Length; Shape_Area,0.5
+TGRAC GIS,StampsAndRegistrations,Dataset,1_Buildings.csv,data/StampsAndRegistrations_Folder/SRO/1_Buildings.csv,40589,8,OBJECTID; name; type; Polygon; Price; Zone_Name; Shape_Length; Shape_Area,3387.6
+TGRAC GIS,StampsAndRegistrations,Dataset,2_Road_Type.csv,data/StampsAndRegistrations_Folder/SRO/2_Road_Type.csv,157,5,OBJECTID; Id; Road_Type; Shape_Length; Shape_Area,9.3
+TGRAC GIS,HMDA,Dataset,0_HMDA.csv,data/HMDA_Folder/HMDA/0_HMDA.csv,6,4,OBJECTID; ZNAME; Shape_Length; Shape_Area,0.4
+TGRAC GIS,HMDA,Dataset,1_DISTRICT.csv,data/HMDA_Folder/HMDA/1_DISTRICT.csv,6,4,OBJECTID; New_Distri; Shape_Length; Shape_Area,0.4
+TGRAC GIS,HMDA,Dataset,2_MANDALS.csv,data/HMDA_Folder/HMDA/2_MANDALS.csv,51,6,OBJECTID; New_Mandal; New_Distri; Shape_Length; Shape_Area; Mandal,4.3
+TGRAC GIS,HMDA,Dataset,3_VILLAGE.csv,data/HMDA_Folder/HMDA/3_VILLAGE.csv,805,10,Village; New_Mandal; New_Distri; Shape_Length; Shape_Area; OBJECTID; Mandal; District; Juridictio; a,94.9
+TGRAC GIS,HMDA,Dataset,4_MANUFACTURE_INDUSTRIAL.csv,data/HMDA_Folder/HMDA/4_MANUFACTURE_INDUSTRIAL.csv,8758,17,OBJECTID_1; FID_PA_PLU; Layer; FID_Parcel; OBJECTID; Village; Mandal; District; Parcels; Remarks; Govt_Land; a; Error; Shape_Length; Shape_Area; New_Distri; Area,1426.7
+TGRAC GIS,HMDA,Dataset,5_Cadastral.csv,data/HMDA_Folder/HMDA/5_Cadastral.csv,9233,12,OBJECTID_1; OBJECTID; Village; Mandal; District; Parcels; Remarks; Govt_Land; a; Error; Shape_Length; Shape_Area,1055.7
+TGRAC GIS,HMDA,Dataset,6_Pocket.csv,data/HMDA_Folder/HMDA/6_Pocket.csv,449,46,FID; Area; Mandal; New_Mandal; District; Village; Road_Type; Id; Pocket_Id; New_Distri; Distance; Distance_t; S_no; Old_Distri; Old_Mandal; New_Dist_1; New_Mand_1; Village_1; Area__Manu; Area_Vacan; Status_as; Full_Surve; Part_Surve; Pocket_i_1; Distance__; Road_Typ_1; Distance_1; Substation; Gas_pi,212.1
+TGRAC GIS,Bhubarathi,Dataset,0_Resurveyed_Field_Boundary.csv,data/Bhubarathi_Folder/Bhubarathi_Query/0_Resurveyed_Field_Boundary.csv,482,13,FID; PARCEL_ID; CHALTA_NO; SCNAME; MNAME; VNAME; Area; Acres; Cents; Guntas; Ares; PARCEL_ID1; Hectares,44.2
+TGRAC GIS,Bhubarathi,Dataset,0_Embhora_Cadastral_Data_1950s.csv,data/Bhubarathi_Folder/Bhubarathi/0_Embhora_Cadastral_Data_1950s.csv,109,12,FID; OBJECTID; Feature_Co; Descriptio; Parcel_num; Remarks; V_Name; M_Name; D_Name; DMV_Code; Shape_Area; Parcel_No,11.9
+TGRAC GIS,Bhubarathi,Dataset,2_Resurveyed_Field_Boundary.csv,data/Bhubarathi_Folder/Bhubarathi/2_Resurveyed_Field_Boundary.csv,482,13,FID; PARCEL_ID; CHALTA_NO; SCNAME; MNAME; VNAME; Area; Acres; Cents; Guntas; Ares; PARCEL_ID1; Hectares,44.2
+TGRAC GIS,Bhubarathi,Dataset,3_Boundary_Stones.csv,data/Bhubarathi_Folder/Bhubarathi/3_Boundary_Stones.csv,6321,11,FID; Vertex_Lab; V_ID; Parcel_ID; Point_X; Point_Y; VNAME; Circuits; IsEdgeVert; longitude; latitude,715.9
+TGRAC GIS,Bhubarathi,Dataset,4_OffSetLine.csv,data/Bhubarathi_Folder/Bhubarathi/4_OffSetLine.csv,5357,6,FID; Offid; Parcel_ID; MNAME; VNAME; Length,277.8
+TGRAC GIS,Bhubarathi,Dataset,5_GeoLineSplitted.csv,data/Bhubarathi_Folder/Bhubarathi/5_GeoLineSplitted.csv,5839,8,FID; Diagonal_I; Parcel_ID; CHALTA_NO; SCNAME; MNAME; VNAME; Length,378.2
+TGRAC GIS,GWDPotential,Dataset,0_District_Boundary.csv,data/GWDPotential_Folder/Groundwater_Potential/0_District_Boundary.csv,33,24,FID; OBJECTID_1; S_No; State_Code; District_L; Census_199; Census_200; Census_201; DCODE; District; District_T; Pesa_Statu; Zone_; Energy; Abbrevatio; Population; Area_SqKm; Populati_1; Literacy_R; Block; Village; Municipali; SHAPE_Leng; SHAPE_Area,7.0
+TGRAC GIS,GWDPotential,Dataset,10_WRDPL.csv,data/GWDPotential_Folder/Groundwater_Potential/10_WRDPL.csv,2703,4,FID; SYM_CODE; WRDPL_CODE; WR_DESCRIP,77.7
+TGRAC GIS,GWDPotential,Dataset,11_Drain_Poly.csv,data/GWDPotential_Folder/Groundwater_Potential/11_Drain_Poly.csv,37319,5,FID; SYM_CODE; DRNP_CODE; DRNP_NAME; DESCR,1096.9
+TGRAC GIS,GWDPotential,Dataset,12_Ground_Water_Potential.csv,data/GWDPotential_Folder/Groundwater_Potential/12_Ground_Water_Potential.csv,62471,21,FID; ALNUM_CODE; SYM_CODE; Geom; LG2; LG_ST; LG_1; Litho; LG_3A; LG_3B; LG_4; LG_5B; LG_6A; LG_7A; LG_8A; LG_9; LG_10; LG_11; LG_12A; LG_13; GM_Code,10549.6
+TGRAC GIS,GWDPotential,Dataset,1_Mandal_Boundary.csv,data/GWDPotential_Folder/Groundwater_Potential/1_Mandal_Boundary.csv,621,38,FID; OBJECTID; FID__; Sum_of_No_; Sum_of_TOT; Sum_of_T_1; Sum_of_T_2; Sum_of_P_0; Sum_of_M_0; Sum_of_F_0; Sum_of_P_S; Sum_of_M_S; Sum_of_F_S; Sum_of_P_1; Sum_of_M_1; Sum_of_F_1; Mandal_Typ; District; Mandal; Revenue_Di; State_Code; District_L; Census_199; Census_200; Census_201; DCODE; District_T; P,208.8
+TGRAC GIS,GWDPotential,Dataset,2_Village_Boundary.csv,data/GWDPotential_Folder/Groundwater_Potential/2_Village_Boundary.csv,10923,46,FID; OBJECTID; DMV_Code; District; vlgcd11; Mandal; Village; No_HH; TOT_P; TOT_M; TOT_F; P_06; M_06; F_06; P_SC; M_SC; F_SC; M_ST; P_ST; F_ST; Remarks_1; NewRevRema; State; Old_Mandal; Old_Dist; Parliament; Assembly; Class; ULB; ULB_Mandal; Revenue_Di; SNo; District_C; District_N; Subdistric; Subdis,4665.3
+TGRAC GIS,GWDPotential,Dataset,3_NC_PC_Habitation_Villages_Cities.csv,data/GWDPotential_Folder/Groundwater_Potential/3_NC_PC_Habitation_Villages_Cities.csv,16176,8,FID; SCODE; S_TYPE; S_NAME; SYM_CODE; name; longitude; latitude,1453.7
+TGRAC GIS,GWDPotential,Dataset,4_Wells_Observed_During_Field_Visit.csv,data/GWDPotential_Folder/Groundwater_Potential/4_Wells_Observed_During_Field_Visit.csv,9281,10,FID; AREA; PERIMETER; WL_CODE; WELL_TYPE; WT_TD; YIELD; SYM_CODE; longitude; latitude,932.3
+TGRAC GIS,GWDPotential,Dataset,5_Drain_Line.csv,data/GWDPotential_Folder/Groundwater_Potential/5_Drain_Line.csv,375689,5,FID; DRNL_CODE; DRNL_NAME; SYM_CODE; DESCR,10655.5
+TGRAC GIS,GWDPotential,Dataset,6_Stru1.csv,data/GWDPotential_Folder/Groundwater_Potential/6_Stru1.csv,46135,5,FID; SYM_CODE; STRU_CODE; SUB_STRU; STRU,4836.9
+TGRAC GIS,GWDPotential,Dataset,7_Roads.csv,data/GWDPotential_Folder/Groundwater_Potential/7_Roads.csv,63713,5,FID; SUB_TYPE; RD_CODE; SYM_CODE; ROAD_TYPE,3180.2
+TGRAC GIS,GWDPotential,Dataset,8_Rail.csv,data/GWDPotential_Folder/Groundwater_Potential/8_Rail.csv,66,8,FID; LENGTH; RAIL_ID; RL_CODE; SYM_CODE; RAIL_TYPE; Id; RAIL_DET,4.2
+TGRAC GIS,GWDPotential,Dataset,9_WRDPP.csv,data/GWDPotential_Folder/Groundwater_Potential/9_WRDPP.csv,6307,6,FID; WRDPP_CODE; SYM_CODE; WR_DESCRIP; longitude; latitude,446.8

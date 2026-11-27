@@ -1,0 +1,54 @@
+id,source,item,status,evidence
+1,Bhu Bharati,District / mandal / village / survey number,Yes,"32 districts, 606 mandals, 10,889 villages, 4,260,897 survey numbers"
+2,Bhu Bharati,Telugu names,Yes,"District, mandal and village names"
+3,Bhu Bharati,Sub-Registrar office list,Yes,605 offices
+4,Bhu Bharati,Sub-division number,No,Survey number only
+5,Bhu Bharati,Owner / pattadar name,No,
+6,Bhu Bharati,Land extent (acres / guntas),No,
+7,Bhu Bharati,"Land type, ROR-1B details",No,
+8,Bhu Bharati,Ownership history,No,
+9,Bhu Bharati,Prohibited / acquired land status,No,
+10,Bhu Bharati,Registered document details (doc no. / year),No,
+11,Bhu Bharati,Land Parcel Map (boundary),No,"Only 482 resurveyed parcels for one village (Embhora), from TGRAC"
+12,Stamps & Registration / MeeSeva,EC (encumbrance) records,No,
+13,Stamps & Registration / MeeSeva,Certified copies,No,
+14,Stamps & Registration / MeeSeva,Government market value,Yes,"40,589 buildings with a price, Uppal zone and 2 circles only (TGRAC layer)"
+15,Stamps & Registration / MeeSeva,"How-to info for EC, market value, registration",Yes,MeeSeva FAQ page text
+16,TG-bPASS,Building / layout permission records,No,Only 3 pages of text and 1 FAQ PDF
+17,TG-bPASS,"Plot, survey number, coordinates, ownership proof",No,
+18,HMDA,Building permissions,Yes,"4,849 records: file no., applicant, survey no. and village in subject text, date, type"
+19,HMDA,Layout permissions,Yes,"1,943 records, plus extended-area and HADA registers"
+20,HMDA,"NOCs, single-window, land-use change",Yes,"100 + 254 + 322 records"
+21,HMDA,Links to proceedings / plan PDFs,Yes,Links only; PDFs not downloaded or read
+22,HMDA,Survey number and village as separate columns,No,Inside a long text field; needs parsing
+23,HMDA,Master plan / zoning,No,PDF links only
+24,HMDA,Cadastral parcels and village boundaries,Yes,"9,233 parcels, 805 villages (TGRAC HMDA folder)"
+25,TG RERA,Registered projects list,No,
+26,TG RERA,Promoter / agent registration,No,
+27,TG RERA,Project progress,No,
+28,TG RERA,Complaints / orders,Yes,"1,532 orders with subject, date and PDF link; complainant, respondent and project filled in only 17 rows"
+29,TG RERA,Renewed / revoked projects,Yes,11 + 22 rows
+30,TG RERA,Order PDFs,Yes,"3,949 links"
+31,TGRAC GIS,Layer catalogue,Yes,"2,044 layers in 50 folders"
+32,TGRAC GIS,Roads and highways,Yes,"71,826 road segments plus national / state highways"
+33,TGRAC GIS,"Lakes, ponds, tanks",Yes,"36,580 water bodies; ORR tanks with 2014 / 2023 encroachment status"
+34,TGRAC GIS,"Rivers, reservoirs, drains",Yes,
+35,TGRAC GIS,"Power (substations, transformers, poles)",Yes,
+36,TGRAC GIS,Groundwater potential zones,Yes,"62,471 zones with depth, yield and water quality"
+37,TGRAC GIS,Observation wells,Yes,"2,923 GWD wells + 9,281 field wells (depth / yield)"
+38,TGRAC GIS,Census population by district / mandal / village,Yes,
+39,TGRAC GIS,Cadastral parcels,Yes,"63,686 parcels around Hyderabad only (Hydra)"
+40,TGRAC GIS,Parcel shapes / boundaries,No,Only data columns saved; point layers have latitude / longitude
+41,TGRAC GIS,Bhunaksha cadastral,No,Listed in catalogue only (10.7M features)
+42,TGRAC GIS,Land use / land cover,No,Listed in catalogue only
+43,TGRAC GIS,GHMC property / building dockets,No,Listed in catalogue only
+44,TGRAC GIS,"FTL tank boundaries 2014 / 2023 / 2025",No,Listed in catalogue only
+45,TGRAC GIS,Other 43 folders,No,Listed in catalogue only
+46,Water (GWD / CGWB),Ground Water Dept water-level reports,No,Site not crawled; only GWD well locations from TGRAC
+47,Water (GWD / CGWB),CGWB aquifer / hydrogeology reports,No,"5 pages, mostly contacts and recruitment; 1 NAQUIM guidebook PDF"
+48,GHMC,Property tax / property identifiers,No,"3 pages and 105 procedure PDFs (mutation, vacant land tax)"
+49,Not collected,eCourts (district cases),No,
+50,Not collected,Telangana High Court,No,
+51,Not collected,ISRO Bhuvan 2D / Lite,No,
+52,Not collected,Google Earth / Maps / Mappls,No,
+53,Not collected,TGRAC Land Use & Ecology project,No,
